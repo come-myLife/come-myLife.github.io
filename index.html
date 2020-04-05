@@ -14,7 +14,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <title>我到哪里都是猪</title>
-    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="icon" type="image/jpeg" href="/medias/logo.jpg">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
@@ -31,7 +31,7 @@
     
 <meta name="generator" content="Hexo 4.2.0"></head>
 
-
+<script type="text/javascript"> var OriginTitile = document.title, st; document.addEventListener("visibilitychange", function () { document.hidden ? (document.title = "看不见我🙈~看不见我🙈~", clearTimeout(st)) : (document.title = "(๑•̀ㅂ•́) ✧被发现了～", st = setTimeout(function () { document.title = OriginTitile }, 3e3)) }) </script>
 <body>
     <header class="navbar-fixed">
     <nav id="headNav" class="bg-color nav-transparent">
@@ -39,7 +39,7 @@
             <div class="brand-logo">
                 <a href="/" class="waves-effect waves-light">
                     
-                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    <img src="/medias/logo.jpg" class="logo-img" alt="LOGO">
                     
                     <span class="logo-span">我到哪里都是猪</span>
                 </a>
@@ -126,7 +126,7 @@
 
     <div class="mobile-head bg-color">
         
-        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        <img src="/medias/logo.jpg" class="logo-img circle responsive-img">
         
         <div class="logo-name">我到哪里都是猪</div>
         <div class="logo-desc">
@@ -515,7 +515,8 @@ $(function () {
 
 
 
-    <footer class="page-footer bg-color">
+     <canvas class="fireworks" style="position: fixed; left: 0; top: 0; z-index: 1; pointer-events: none;" ></canvas> <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> <script type="text/javascript" src="/js/fireworks.js"></script> 
+<footer class="page-footer bg-color">
     <div class="container row center-align">
         <div class="col s12 m8 l8 copy-right">
             本站由&nbsp;&copy;<a href="http://yoursite.com" target="_blank">我到哪里都是猪</a>&nbsp;基于
@@ -562,7 +563,7 @@ $(function () {
                     if (String(snum).length == 1) {
                         snum = "0" + snum;
                     }
-                    document.getElementById("timeDate").innerHTML = "本站已安全运行 " + dnum + " 天 ";
+                    document.getElementById("timeDate").innerHTML = "本站已勉强运行 " + dnum + " 天 ";
                     document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
                 }
                 setInterval("createtime()", 250);
@@ -590,6 +591,16 @@ $(function () {
 </footer>
 
 <div class="progress-bar"></div>
+<script>
+ $(document).ready(function () {
+ var int = setInterval(fixCount, 50); // 50ms周期检测函数
+ var pvcountOffset = 80000; // 初始化首次数据
+ var uvcountOffset = 20000;
+ function fixCount() {
+	if (document.getElementById("busuanzi_container_site_pv").style.display != "none") { 
+	$("#busuanzi_value_site_pv").html(parseInt($("#busuanzi_value_site_pv").html()) + pvcountOffset);
+	clearInterval(int);
+	} if ($("#busuanzi_container_site_pv").css("display") != "none") { $("#busuanzi_value_site_uv").html(parseInt($("#busuanzi_value_site_uv").html()) + uvcountOffset); // 加上初始数据 clearInterval(int); // 停止检测 } } }); </script>
 
 
     <!-- 搜索遮罩框 -->
@@ -629,8 +640,6 @@ $(function () {
 
 
     
-    <script src="/libs/others/clicklove.js" async="async"></script>
-    
     
     <script async src="/libs/others/busuanzi.pure.mini.js"></script>
     
@@ -668,6 +677,6 @@ $(function () {
     <script type="text/javascript" src="/libs/background/ribbon-dynamic.js" async="async"></script>
     
 
-</body>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":false},"react":{"opacity":0.7}});</script></body>
 
 </html>
