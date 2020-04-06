@@ -364,6 +364,15 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                 
             </div>
             <div class="cover-social-link">
+    <a href="https://github.com/come-myLife" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fa fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:1844495300@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fa fa-envelope-open"></i>
+    </a>
 
 
 
@@ -371,6 +380,9 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
 
 
 
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1844495300" class="tooltipped" data-tooltip="QQ联系我: 1844495300" data-position="top" data-delay="50">
+        <i class="fa fa-qq"></i>
+    </a>
 
 
 
@@ -391,37 +403,16 @@ $(function () {
     coverSlider.carousel({
         duration: Number('120'),
         fullWidth: true,
-        indicators: 'true' === 'true'
+        indicators: 'false' === 'true'
     });
 
     let carouselIntervalId;
     
-    // Loop to call the next cover article picture.
-    let autoCarousel = function() {
-        carouselIntervalId = setInterval(function () {
-            coverSlider.carousel('next');
-        }, 5000);
-    };
-    autoCarousel();
-    
 
     let restartPlay = function () {
         
-        clearInterval(carouselIntervalId);
-        autoCarousel();
-        
     };
 
-    
-    // prev and next cover post.
-    $('#prev-cover').click(function () {
-        coverSlider.carousel('prev');
-        restartPlay();
-    });
-    $('#next-cover').click(function () {
-        coverSlider.carousel('next');
-        restartPlay();
-    });
     
 });
 </script>
@@ -572,6 +563,15 @@ $(function () {
             
         </div>
         <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/come-myLife" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fa fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:1844495300@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fa fa-envelope-open"></i>
+    </a>
 
 
 
@@ -579,6 +579,9 @@ $(function () {
 
 
 
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1844495300" class="tooltipped" data-tooltip="QQ联系我: 1844495300" data-position="top" data-delay="50">
+        <i class="fa fa-qq"></i>
+    </a>
 
 
 
