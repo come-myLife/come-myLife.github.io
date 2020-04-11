@@ -195,7 +195,7 @@
 </div>
 <script>
 // 每天切换 banner 图.  Switch banner image every day.
-$('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getHours()+'.jpg)');
+$('.bg-cover').css('background-image', 'url(/medias/banner/' + Math.round(Math.random()*23)+'.jpg)');
 </script>
     </div>
 </div>
@@ -441,5 +441,5 @@ $(function () {
 	
 
 </body>
-
+<script src="https://cdn.jsdelivr.net/gh/yunwanjia-cloud/blog/js/instant_page.js" type="module"></ script>
 </html>
