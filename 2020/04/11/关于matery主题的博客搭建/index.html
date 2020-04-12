@@ -6,14 +6,7 @@
     <meta charset="utf-8">
     <meta name="keywords" content="关于matery主题的搭建, 我到哪里都是猪">
     <meta name="description" content="
-这是我本人基于Hexo-theme-matery的搭建
-
-特性
-简单漂亮，文章内容美观易读
-Material Design 设计
-响应式设计，博客在桌面端、平板、手机等设备上均能很好的展现
-首页轮播文章及每天动态切换 Banner 图片
-">
+本文为转载文章，由闪烁之狐整理原文链接：https://blinkfox.github.io/2018/09/28/qian-duan/hexo-bo-ke-zhu-ti-zhi-hexo-theme-matery-de-jie-shao">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -128,7 +121,7 @@ Material Design 设计
         <div class="logo-name">我到哪里都是猪</div>
         <div class="logo-desc">
             
-            虚空之握通冥府，一声羊来开天门！
+            Never really desperate, only the lost of the soul.
             
         </div>
     </div>
@@ -366,7 +359,7 @@ Material Design 设计
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <blockquote>
-<p>这是我本人基于Hexo-theme-matery的搭建</p>
+<p>本文为转载文章，由闪烁之狐整理<br>原文链接：<a href="https://blinkfox.github.io/2018/09/28/qian-duan/hexo-bo-ke-zhu-ti-zhi-hexo-theme-matery-de-jie-shao/" target="_blank" rel="noopener">https://blinkfox.github.io/2018/09/28/qian-duan/hexo-bo-ke-zhu-ti-zhi-hexo-theme-matery-de-jie-shao/</a></p>
 </blockquote>
 <h2 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h2><ul>
 <li>简单漂亮，文章内容美观易读</li>
@@ -390,8 +383,7 @@ Material Design 设计
 <h2 id="为什么要搭建博客"><a href="#为什么要搭建博客" class="headerlink" title="为什么要搭建博客"></a>为什么要搭建博客</h2><blockquote>
 <p>有时候自己学习东西，或者查找资料没有系统的地方去复习，所以决定搭建博客来解决这个问题</p>
 </blockquote>
-<h2 id="基于大家已经初步搭建好了Matery主题"><a href="#基于大家已经初步搭建好了Matery主题" class="headerlink" title="基于大家已经初步搭建好了Matery主题"></a>基于大家已经初步搭建好了Matery主题</h2><p><strong><em>要是大家还没有搭建好也可以去参考闪烁之狐大佬的搭建主题文章</em></strong> <a href="https://blinkfox.github.io/2018/09/28/qian-duan/hexo-bo-ke-zhu-ti-zhi-hexo-theme-matery-de-jie-shao/" target="_blank" rel="noopener">https://blinkfox.github.io/2018/09/28/qian-duan/hexo-bo-ke-zhu-ti-zhi-hexo-theme-matery-de-jie-shao/</a></p>
-<h2 id="接下来我们进入正题"><a href="#接下来我们进入正题" class="headerlink" title="接下来我们进入正题"></a>接下来我们进入正题</h2><h3 id="文章Front-matter介绍"><a href="#文章Front-matter介绍" class="headerlink" title="文章Front-matter介绍"></a>文章Front-matter介绍</h3><blockquote>
+<h2 id="基于大家已经初步搭建好了Matery主题"><a href="#基于大家已经初步搭建好了Matery主题" class="headerlink" title="基于大家已经初步搭建好了Matery主题"></a>基于大家已经初步搭建好了Matery主题</h2><h2 id="接下来我们进入正题"><a href="#接下来我们进入正题" class="headerlink" title="接下来我们进入正题"></a>接下来我们进入正题</h2><h3 id="文章Front-matter介绍"><a href="#文章Front-matter介绍" class="headerlink" title="文章Front-matter介绍"></a>文章Front-matter介绍</h3><blockquote>
 <p>选项中的所有内容均为非必填</p>
 </blockquote>
 <p>可以打开source/_posts/文件名.md去查看一下里面的内容，不出意外里面应该只有<br>一个文件</p>
@@ -472,7 +464,7 @@ Material Design 设计
 <h3 id="最全示例"><a href="#最全示例" class="headerlink" title="最全示例"></a>最全示例</h3><pre><code>---
 title: typora-vue-theme主题介绍
 date: 2018-09-07 09:25:00
-author: 赵奇
+author: 张三
 img: /source/images/xxx.jpg
 top: true
 cover: true
@@ -485,7 +477,44 @@ categories: Markdown
 tags:
   - Typora
   - Markdown
----</code></pre>
+---</code></pre><h2 id="自定义修改"><a href="#自定义修改" class="headerlink" title="自定义修改"></a>自定义修改</h2><ul>
+<li>该主题的_config.yml 中可以修改部分自定义信息，有以下几个部分：</li>
+<li>菜单</li>
+<li>我的梦想</li>
+<li>首页的音乐播放器和视频播放器配置</li>
+<li>是否显示推荐文章名称和按钮配置</li>
+<li>favicon 和 Logo</li>
+<li>个人信息</li>
+<li>TOC 目录</li>
+<li>文章打赏信息</li>
+<li>复制文章内容时追加版权信息</li>
+<li>MathJax</li>
+<li>文章字数统计、阅读时长</li>
+<li>点击页面的’爱心’效果</li>
+<li>我的项目</li>
+<li>我的技能</li>
+<li>我的相册</li>
+<li>Gitalk、Gitment、Valine 和 disqus 评论配置</li>
+<li>不蒜子统计和谷歌分析（Google Analytics）</li>
+<li>默认特色图的集合。当文章没有设置特色图时，本主题会根据文章标题的 hashcode 值取余，来选择展示对应的特色图</li>
+</ul>
+<h3 id="修改主题颜色"><a href="#修改主题颜色" class="headerlink" title="修改主题颜色"></a>修改主题颜色</h3><p>在主题文件的 /source/css/matery.css 文件中，搜索 .bg-color 来修改背景颜色：</p>
+<pre><code>/* 整体背景颜色，包括导航、移动端的导航、页尾、标签页等的背景颜色. */
+.bg-color {
+    background-image: linear-gradient(to right, #4cbf30 0%, #0f9d58 100%);
+}
+
+@-webkit-keyframes rainbow {
+   /* 动态切换背景颜色. */
+}
+
+@keyframes rainbow {
+    /* 动态切换背景颜色. */
+}</code></pre><h3 id="修改-banner-图和文章特色图"><a href="#修改-banner-图和文章特色图" class="headerlink" title="修改 banner 图和文章特色图"></a>修改 banner 图和文章特色图</h3><p>你可以直接在 /source/medias/banner 文件夹中更换你喜欢的 banner 图片，主题代码中是每天动态切换一张，<br>只需 7 张即可。如果你会 JavaScript 代码，可以修改成你自己喜欢切换逻辑，如：随机切换等，banner 切换的<br>代码位置在 /layout/_partial/bg-cover-content.ejs 文件的 <script></script> 代码中：</p>
+<p><code>$(&#39;.bg-cover&#39;).css(&#39;background-image&#39;, &#39;url(/medias/banner/&#39; + new Date().getDay() + &#39;.jpg)&#39;);</code></p>
+<p>new Date() 的相关方法大家也可以去查看一下</p>
+<p>也可以用随机数，通过刷新来切换banner 只要把<strong><em>new Date().getDay()</em></strong>换成这个<strong><em>Math.round(Math.random()*23</em></strong><br>就可以了*23代表总共在23张图片里面切换，前提是你banner文件夹里面有这么多图片.</p>
+
             </div>
             <hr/>
 
@@ -887,7 +916,9 @@ $(function () {
     <script src="https://cdn.jsdelivr.net/gh/come-myLife/come-myLife.github.io/libs/scrollprogress/scrollProgress.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/come-myLife/come-myLife.github.io/libs/lightGallery/js/lightgallery-all.min.js"></script>
     <script src="/js/matery.js"></script>
-
+	<script type="text/javascript"
+		color="81 136 157" opacity='0.7' zIndex="-2" count="200" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
+	</script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
@@ -932,8 +963,6 @@ $(function () {
 
     
 
-    
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/come-myLife/come-myLife.github.io/libs/background/ribbon-dynamic.js" async="async"></script>
     
 	
 	
