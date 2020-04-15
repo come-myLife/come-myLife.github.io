@@ -4,9 +4,10 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="关于matery主题的搭建, 我到哪里都是猪">
-    <meta name="description" content="
-本文为转载文章，由闪烁之狐整理原文链接：https://blinkfox.github.io/2018/09/28/qian-duan/hexo-bo-ke-zhu-ti-zhi-hexo-theme-matery-de-jie-shao">
+    <meta name="keywords" content="SpringMVC知识整合, 我到哪里都是猪">
+    <meta name="description" content="1、什么是MVC
+mvc是模型（Model），视图（View），控制器（Controller）的简写，是一种软件设计规范模型（dao,service） 试图（jsp） 控制器（Servlet）
+是将业务逻辑，数据，显示分离的方法来组织代码。">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -14,7 +15,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>关于matery主题的搭建 | 我到哪里都是猪</title>
+    <title>SpringMVC知识整合 | 我到哪里都是猪</title>
     <link rel="icon" type="image/jpeg" href="https://cdn.jsdelivr.net/gh/come-myLife/come-myLife.github.io/medias/logo.jpg">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/come-myLife/come-myLife.github.io/libs/awesome/css/font-awesome.min.css">
@@ -207,7 +208,7 @@
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        关于matery主题的搭建
+                        SpringMVC知识整合
                     </div>
                 </div>
             </div>
@@ -318,8 +319,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E5%8D%9A%E5%AE%A2/" target="_blank">
-                                <span class="chip bg-color">博客</span>
+                            <a href="/tags/%E6%A1%86%E6%9E%B6/" target="_blank">
+                                <span class="chip bg-color">框架</span>
                             </a>
                         
                     </div>
@@ -330,8 +331,8 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E5%8D%9A%E5%AE%A2%E7%9A%84%E6%90%AD%E5%BB%BA/" class="post-category" target="_blank">
-                                博客的搭建
+                            <a href="/categories/SpringMVC/" class="post-category" target="_blank">
+                                SpringMVC
                             </a>
                         
                     </div>
@@ -342,7 +343,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-04-11
+                    2020-04-13
                 </div>
 
                 
@@ -358,162 +359,21 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <blockquote>
-<p>本文为转载文章，由闪烁之狐整理<br>原文链接：<a href="https://blinkfox.github.io/2018/09/28/qian-duan/hexo-bo-ke-zhu-ti-zhi-hexo-theme-matery-de-jie-shao/" target="_blank" rel="noopener">https://blinkfox.github.io/2018/09/28/qian-duan/hexo-bo-ke-zhu-ti-zhi-hexo-theme-matery-de-jie-shao/</a></p>
-</blockquote>
-<h2 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h2><ul>
-<li>简单漂亮，文章内容美观易读</li>
-<li>Material Design 设计</li>
-<li>响应式设计，博客在桌面端、平板、手机等设备上均能很好的展现</li>
-<li>首页轮播文章及每天动态切换 Banner 图片</li>
-<li>瀑布流式的博客文章列表（文章无特色图片时会有 24 张漂亮的图片代替）</li>
-<li>时间轴式的归档页</li>
-<li>词云的标签页和雷达图的分类页</li>
-<li>丰富的关于我页面（包括关于我、文章统计图、我的项目、我的技能、相册等）</li>
-<li>可自定义的数据的友情链接页面</li>
-<li>支持文章置顶和文章打赏</li>
-<li>支持 MathJax</li>
-<li>TOC 目录</li>
-<li>可设置复制文章内容时追加版权信息</li>
-<li>可设置阅读文章时做密码验证</li>
-<li>Gitalk、Gitment、Valine 和 Disqus 评论模块（推荐使用 Gitalk）</li>
-<li>集成了不蒜子统计、谷歌分析（Google Analytics）和文章字数统计等功能</li>
-<li>支持在首页的音乐播放和视频播放功能</li>
+                <h2 id="1、什么是MVC"><a href="#1、什么是MVC" class="headerlink" title="1、什么是MVC"></a>1、什么是MVC</h2><ul>
+<li>mvc是模型（Model），视图（View），控制器（Controller）的简写，是一种软件设计规范模型（dao,service） 试图（jsp） 控制器（Servlet）</li>
+<li>是将业务逻辑，数据，显示分离的方法来组织代码。</li>
+<li>mvc主要作用是降低了视图与业务逻辑间的双向耦合。</li>
+<li>mvc不是一种设计模式，mvc是一种架构模式</li>
 </ul>
-<h2 id="文章Front-matter介绍"><a href="#文章Front-matter介绍" class="headerlink" title="文章Front-matter介绍"></a>文章Front-matter介绍</h2><blockquote>
-<p>选项中的所有内容均为非必填</p>
-</blockquote>
-<p>可以打开source/_posts/文件名.md去查看一下里面的内容，不出意外里面应该只有<br>一个文件</p>
-<table>
-<thead>
-<tr>
-<th align="center">配置选项</th>
-<th align="center">默认值</th>
-<th align="center">描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">title</td>
-<td align="center">Markdown 的文件标题</td>
-<td align="center">文章标题，强烈建议填写此选项</td>
-</tr>
-<tr>
-<td align="center">date</td>
-<td align="center">文件创建时的日期时间</td>
-<td align="center">发布时间，强烈建议填写此选项，且最好保证全局唯一</td>
-</tr>
-<tr>
-<td align="center">author</td>
-<td align="center">根 _config.yml 中的 author</td>
-<td align="center">文章作者</td>
-</tr>
-<tr>
-<td align="center">img</td>
-<td align="center">featureImages 中的某个值</td>
-<td align="center">文章特征图，推荐使用图床(腾讯云、七牛云、又拍云等)来做图片的路径.如: <a href="http://xxx.com/xxx.jpg" target="_blank" rel="noopener">http://xxx.com/xxx.jpg</a></td>
-</tr>
-<tr>
-<td align="center">top</td>
-<td align="center">true</td>
-<td align="center">推荐文章（文章是否置顶），如果 top 值为 true，则会作为首页推荐文章</td>
-</tr>
-<tr>
-<td align="center">cover</td>
-<td align="center">false</td>
-<td align="center">v1.0.2版本新增，表示该文章是否需要加入到首页轮播封面中</td>
-</tr>
-<tr>
-<td align="center">coverImg</td>
-<td align="center">无</td>
-<td align="center">v1.0.2版本新增，表示该文章在首页轮播封面需要显示的图片路径，如果没有，则默认使用文章的特色图片</td>
-</tr>
-<tr>
-<td align="center">password</td>
-<td align="center">无</td>
-<td align="center">文章阅读密码，如果要对文章设置阅读验证密码的话，就可以设置 password 的值，该值必须是用 SHA256 加密后的密码，防止被他人识破。前提是在主题的 config.yml 中激活了 verifyPassword 选项</td>
-</tr>
-<tr>
-<td align="center">toc</td>
-<td align="center">true</td>
-<td align="center">是否开启 TOC，可以针对某篇文章单独关闭 TOC 的功能。前提是在主题的 config.yml 中激活了 toc 选项</td>
-</tr>
-<tr>
-<td align="center">mathjax</td>
-<td align="center">false</td>
-<td align="center">是否开启数学公式支持 ，本文章是否开启 mathjax，且需要在主题的 _config.yml 文件中也需要开启才行</td>
-</tr>
-<tr>
-<td align="center">summary</td>
-<td align="center">无</td>
-<td align="center">文章摘要，自定义的文章摘要内容，如果这个属性有值，文章卡片摘要就显示这段文字，否则程序会自动截取文章的部分内容作为摘要</td>
-</tr>
-<tr>
-<td align="center">categories</td>
-<td align="center">无</td>
-<td align="center">文章分类，本主题的分类表示宏观上大的分类，只建议一篇文章一个分类</td>
-</tr>
-<tr>
-<td align="center">tags</td>
-<td align="center">无</td>
-<td align="center">文章标签，一篇文章可以多个标签</td>
-</tr>
-</tbody></table>
-<h3 id="最全示例"><a href="#最全示例" class="headerlink" title="最全示例"></a>最全示例</h3><pre><code>---
-title: typora-vue-theme主题介绍
-date: 2018-09-07 09:25:00
-author: 张三
-img: /source/images/xxx.jpg
-top: true
-cover: true
-coverImg: /images/1.jpg
-password: 8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92
-toc: false
-mathjax: false
-summary: 这是你自定义的文章摘要内容，如果这个属性有值，文章卡片摘要就显示这段文字，否则程序会自动截取文章的部分内容作为摘要
-categories: Markdown
-tags:
-  - Typora
-  - Markdown
----</code></pre><h2 id="自定义修改"><a href="#自定义修改" class="headerlink" title="自定义修改"></a>自定义修改</h2><ul>
-<li>该主题的_config.yml 中可以修改部分自定义信息，有以下几个部分：</li>
-<li>菜单</li>
-<li>我的梦想</li>
-<li>首页的音乐播放器和视频播放器配置</li>
-<li>是否显示推荐文章名称和按钮配置</li>
-<li>favicon 和 Logo</li>
-<li>个人信息</li>
-<li>TOC 目录</li>
-<li>文章打赏信息</li>
-<li>复制文章内容时追加版权信息</li>
-<li>MathJax</li>
-<li>文章字数统计、阅读时长</li>
-<li>点击页面的’爱心’效果</li>
-<li>我的项目</li>
-<li>我的技能</li>
-<li>我的相册</li>
-<li>Gitalk、Gitment、Valine 和 disqus 评论配置</li>
-<li>不蒜子统计和谷歌分析（Google Analytics）</li>
-<li>默认特色图的集合。当文章没有设置特色图时，本主题会根据文章标题的 hashcode 值取余，来选择展示对应的特色图</li>
+<p>  &nbsp;&nbsp;&nbsp;&nbsp;<strong>Model（模型）</strong>：数据模型，提供要展示的数据，因此包含数据和行为，可以认为是领域模型<br>或javaBean主键（包含数据行为），不过现在一般都分离开来：Value Object（数据Dao）和服务<br>层（行为Service）。也是模型提供了模型数据查询和模型数据的状态更新等功能，<br>包括数据和业务。</p>
+<p>  &nbsp;&nbsp;&nbsp;&nbsp;<strong>View（视图）</strong>：负责进行模型展示，一般就是我们见到的用户界面，客户想看到的东西。</p>
+<p>  &nbsp;&nbsp;&nbsp;&nbsp;<strong>Controller(控制器)</strong>：接收用户请求，委托给模型来进行处理（状态改变），处理完毕以后把<br>返回的模型数据返回给视图，由视图负责展示，也就是说控制器做了一个调度员的工作。</p>
+<h3 id="1-2、MOdel1时代"><a href="#1-2、MOdel1时代" class="headerlink" title="1.2、MOdel1时代"></a>1.2、MOdel1时代</h3><ul>
+<li>在web早期开发中，通常采用的都是Model1。</li>
+<li>Model1中，主要分2层，视图层(jsp)和模型层(dao,service)。</li>
 </ul>
-<h3 id="修改主题颜色"><a href="#修改主题颜色" class="headerlink" title="修改主题颜色"></a>修改主题颜色</h3><p>在主题文件的 /source/css/matery.css 文件中，搜索 .bg-color 来修改背景颜色：</p>
-<pre><code>/* 整体背景颜色，包括导航、移动端的导航、页尾、标签页等的背景颜色. */
-.bg-color {
-    background-image: linear-gradient(to right, #4cbf30 0%, #0f9d58 100%);
-}
-
-@-webkit-keyframes rainbow {
-   /* 动态切换背景颜色. */
-}
-
-@keyframes rainbow {
-    /* 动态切换背景颜色. */
-}</code></pre><h3 id="修改-banner-图和文章特色图"><a href="#修改-banner-图和文章特色图" class="headerlink" title="修改 banner 图和文章特色图"></a>修改 banner 图和文章特色图</h3><p>你可以直接在 /source/medias/banner 文件夹中更换你喜欢的 banner 图片，主题代码中是每天动态切换一张，<br>只需 7 张即可。如果你会 JavaScript 代码，可以修改成你自己喜欢切换逻辑，如：随机切换等，banner 切换的<br>代码位置在 /layout/_partial/bg-cover-content.ejs 文件的 <script></script> 代码中：</p>
-<p><code>$(&#39;.bg-cover&#39;).css(&#39;background-image&#39;, &#39;url(/medias/banner/&#39; + new Date().getDay() + &#39;.jpg)&#39;);</code></p>
-<p>new Date() 的相关方法大家也可以去查看一下</p>
-<p>也可以用随机数，通过刷新来切换banner 只要把<strong><em>new Date().getDay()</em></strong>换成这个<strong><em>Math.round(Math.random()*23</em></strong><br>就可以了*23代表总共在23张图片里面切换，前提是你banner文件夹里面有这么多图片.</p>
-<blockquote>
-<p>再推荐一个大佬<br><a href="https://yafine-blog.cn/posts/8c84.html" target="_blank" rel="noopener">传送门</a></p>
-</blockquote>
+<p>Model1优点：架构简单，比较适合小型项目开发；<br>Model1缺点：jsp职责不单一，职责过重，不便于维护；</p>
+<h3 id="1-3、MOdel2时代"><a href="#1-3、MOdel2时代" class="headerlink" title="1.3、MOdel2时代"></a>1.3、MOdel2时代</h3><p>Model2把一个项目分成三部分，包括<strong>视图、控制、模型</strong>。</p>
 
             </div>
             <hr/>
@@ -552,9 +412,9 @@ tags:
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《关于matery主题的搭建》
+                    《SpringMVC知识整合》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/04/11/%E5%85%B3%E4%BA%8Ematery%E4%B8%BB%E9%A2%98%E7%9A%84%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/04/13/ssm%E6%A1%86%E6%9E%B6%E4%B9%8BSpringMVC/" property="cc:attributionName"
                rel="cc:attributionURL">
                 我到哪里都是猪
             </a> 采用
@@ -594,9 +454,10 @@ tags:
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2020/04/13/ssm%E6%A1%86%E6%9E%B6%E4%B9%8BSpringMVC/">
                     <div class="card-image">
@@ -613,9 +474,9 @@ tags:
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-04-13
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-04-13
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -628,6 +489,7 @@ tags:
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -646,30 +508,30 @@ tags:
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/04/03/hello-world/">
+                <a href="/2020/04/11/%E5%85%B3%E4%BA%8Ematery%E4%B8%BB%E9%A2%98%E7%9A%84%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/come-myLife/come-myLife.github.io/medias/dwrgIMG/10.jpg" class="responsive-img" alt="Hello World">
+                        <img src="https://cdn.jsdelivr.net/gh/come-myLife/come-myLife.github.io/medias/dwrgIMG/31.png" class="responsive-img" alt="关于matery主题的搭建">
                         
-                        <span class="card-title">Hello World</span>
+                        <span class="card-title">关于matery主题的搭建</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            测试
+                            这是一个采用Material Design和响应式设计的 Hexo 博客主题。
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-04-03
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-04-11
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Hello-World/" class="post-category" target="_blank">
-                                    Hello World
+                            <a href="/categories/%E5%8D%9A%E5%AE%A2%E7%9A%84%E6%90%AD%E5%BB%BA/" class="post-category" target="_blank">
+                                    博客的搭建
                                 </a>
                             
                             
