@@ -5,9 +5,12 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="SpringMVC知识整合, 我到哪里都是猪">
-    <meta name="description" content="本人基于观看狂神的视频做出的总结[传送门](https://space.bilibili.com/95256449?spm_id_from=333.788.b_765f7570696e666f.1)
+    <meta name="description" content="
+本人基于观看狂神的视频做出的总结传送门
+
 1、什么是MVC
-mvc是模型（Mode">
+mvc是模型（Model），视图（View），控制器（Controller）的简写，是一种软件设计规范模型（dao,service） 试图（jsp） 控制器（Servlet）
+是">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -359,7 +362,9 @@ mvc是模型（Mode">
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p><code>本人基于观看狂神的视频做出的总结[传送门](https://space.bilibili.com/95256449?spm_id_from=333.788.b_765f7570696e666f.1)</code></p>
+                <blockquote>
+<p>本人基于观看狂神的视频做出的总结<a href="https://space.bilibili.com/95256449?spm_id_from=333.788.b_765f7570696e666f.1" target="_blank" rel="noopener">传送门</a></p>
+</blockquote>
 <h2 id="1、什么是MVC"><a href="#1、什么是MVC" class="headerlink" title="1、什么是MVC"></a>1、什么是MVC</h2><ul>
 <li>mvc是模型（Model），视图（View），控制器（Controller）的简写，是一种软件设计规范模型（dao,service） 试图（jsp） 控制器（Servlet）</li>
 <li>是将业务逻辑，数据，显示分离的方法来组织代码。</li>
@@ -379,7 +384,154 @@ mvc是模型（Mode">
 <p>1.用户发送请求<br>2.Servlet接收请求数据，并调用对应的业务逻辑方法<br>3.业务处理完毕，返回更新后的数据给servlet<br>4.servlet转向到jsp，由jsp来渲染页面<br>5.响应给前端更新后的页面</p>
 <p><strong>职责分析：</strong><br><strong>Controller：控制器</strong><br>1.获取表单数据<br>2.调用业务逻辑<br>3.转向指定的页面<br><strong>Model：模型</strong><br>1.业务逻辑<br>2.保存数据状态<br><strong>View：视图</strong><br>1.显示页面</p>
 <p>Model2这样不仅提高的代码的复用率与项目的扩展性，且大大降低了项目的维护成本。<br>Model 1模式的实现比较简单，适用于快速开发小规模项目，Model1中JSP页面身兼View<br>和Controller两种角色，将控制逻辑和表现逻辑混杂在一起，从而导致代码的重用性非常低，<br>增加了应用的扩展性和维护的难度。Model2消除了Model1的缺点。</p>
-<h3 id="1-4、回顾Servlet"><a href="#1-4、回顾Servlet" class="headerlink" title="1.4、回顾Servlet"></a>1.4、回顾Servlet</h3>
+<h3 id="1-4、第一个MVC程序"><a href="#1-4、第一个MVC程序" class="headerlink" title="1.4、第一个MVC程序"></a>1.4、第一个MVC程序</h3><p><strong>1.需要的配置</strong></p>
+<p>1.新建一个webApp模块</p>
+<p>2.确定导入了SpringMVC相关的依赖！</p>
+<p>3.配置web.xml  ， 注册DispatcherServlet</p>
+<p><strong>2.配置MVCServlet-servlet.xml</strong></p>
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;
+       xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+       xmlns:context=&quot;http://www.springframework.org/schema/context&quot;
+       xmlns:mvc=&quot;http://www.springframework.org/schema/mvc&quot;
+       xsi:schemaLocation=&quot;http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/mvc https://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd&quot;&gt;
+    &lt;context:component-scan base-package=&quot;com.controller&quot;&gt;&lt;/context:component-scan&gt;
+    &lt;mvc:default-servlet-handler /&gt;
+
+    &lt;mvc:annotation-driven&gt;
+        &lt;mvc:argument-resolvers&gt;
+            &lt;bean class=&quot;org.springframework.data.web.PageableHandlerMethodArgumentResolver&quot;/&gt;
+        &lt;/mvc:argument-resolvers&gt;
+    &lt;/mvc:annotation-driven&gt;
+    &lt;bean
+            class=&quot;org.springframework.web.servlet.view.InternalResourceViewResolver&quot;&gt;
+        &lt;property name=&quot;viewClass&quot;
+                  value=&quot;org.springframework.web.servlet.view.JstlView&quot;&gt;&lt;/property&gt;
+        &lt;property name=&quot;prefix&quot; value=&quot;/WEB-INF/jsp/&quot;&gt;&lt;/property&gt;
+        &lt;property name=&quot;suffix&quot; value=&quot;.jsp&quot;&gt;&lt;/property&gt;
+    &lt;/bean&gt;
+&lt;/beans&gt;</code></pre><p><strong>3.配置web.xml</strong></p>
+<pre><code>&lt;web-app version=&quot;3.1&quot;
+         xmlns=&quot;http://xmlns.jcp.org/xml/ns/javaee&quot;
+         xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+         xsi:schemaLocation=&quot;http://xmlns.jcp.org/xml/ns/javaee
+                             http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd&quot;&gt;
+
+  &lt;filter&gt;
+
+    &lt;filter-name&gt;CharacterEncodingFilter&lt;/filter-name&gt;
+
+    &lt;filter-class&gt;org.springframework.web.filter.CharacterEncodingFilter&lt;/filter-class&gt;
+
+    &lt;init-param&gt;
+
+      &lt;param-name&gt;encoding&lt;/param-name&gt;
+
+      &lt;param-value&gt;utf-8&lt;/param-value&gt;
+
+    &lt;/init-param&gt;
+
+  &lt;/filter&gt;
+
+  &lt;filter-mapping&gt;
+
+    &lt;filter-name&gt;CharacterEncodingFilter&lt;/filter-name&gt;
+
+    &lt;url-pattern&gt;/*&lt;/url-pattern&gt;
+
+  &lt;/filter-mapping&gt;
+  &lt;context-param&gt;
+    &lt;param-name&gt;log4jConfigLocation&lt;/param-name&gt;
+    &lt;param-value&gt;classpath:log4j.properties&lt;/param-value&gt;
+  &lt;/context-param&gt;
+  &lt;context-param&gt;&lt;!--每一个webAppRootKey的值都要不一样--&gt;
+    &lt;param-name&gt;webAppRootKey&lt;/param-name&gt;
+    &lt;param-value&gt;mvcpart20.root&lt;/param-value&gt;
+  &lt;/context-param&gt;
+  &lt;filter&gt;
+    &lt;filter-name&gt;HiddenHttpMethodFilter&lt;/filter-name&gt;
+    &lt;filter-class&gt;org.springframework.web.filter.HiddenHttpMethodFilter&lt;/filter-class&gt;
+  &lt;/filter&gt;
+  &lt;filter-mapping&gt;
+    &lt;filter-name&gt;HiddenHttpMethodFilter&lt;/filter-name&gt;
+    &lt;url-pattern&gt;/*&lt;/url-pattern&gt;
+  &lt;/filter-mapping&gt;
+
+
+  &lt;listener&gt;&lt;!--监听器 监听webAppRootKey--&gt;
+    &lt;listener-class&gt;
+      org.springframework.web.util.WebAppRootListener
+    &lt;/listener-class&gt;
+  &lt;/listener&gt;
+  &lt;!--注册DispatcherServlet--&gt;
+  &lt;servlet&gt;
+    &lt;servlet-name&gt;MvcServlet&lt;/servlet-name&gt;
+    &lt;servlet-class&gt;org.springframework.web.servlet.DispatcherServlet&lt;/servlet-class&gt;
+    &lt;load-on-startup&gt;1&lt;/load-on-startup&gt;
+  &lt;/servlet&gt;
+  &lt;servlet-mapping&gt;
+    &lt;servlet-name&gt;MvcServlet&lt;/servlet-name&gt;
+    &lt;url-pattern&gt;/&lt;/url-pattern&gt;
+  &lt;/servlet-mapping&gt;
+
+&lt;/web-app&gt;</code></pre><p><strong>4.编写Controller</strong></p>
+<pre><code>package com.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
+import pojo.User;
+
+@Controller
+public class UserController {
+
+    @PostMapping(&quot;/login&quot;)
+    public ModelAndView login(User user){
+        ModelAndView mv = new ModelAndView(&quot;/loginsc&quot;);
+        mv.addObject(&quot;info&quot;,user);
+        return mv;
+    }
+}
+</code></pre><p>@Controller是为了让Spring IOC容器初始化时自动扫描到；</p>
+<p>@RequestMapping是为了映射请求路径，这里因为类与方法上都有映射所以访问时应该是/HelloController/hello；</p>
+<p>方法中声明Model类型的参数是为了把Action中的数据带到视图中；</p>
+<p>方法返回的结果是视图的名称loginsc，加上配置文件中的前后缀变成WEB-INF/jsp/loginsc.jsp。</p>
+<p><strong>5.需要跳转的页面，数据显示页面</strong></p>
+<pre><code>
+&lt;%@ page contentType=&quot;text/html;charset=UTF-8&quot; language=&quot;java&quot; %&gt;
+&lt;html&gt;
+&lt;head&gt;
+   &lt;title&gt;Kuangshen&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+${msg}
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><p><strong>6.可能遇到的问题：访问出现404，排查步骤：</strong></p>
+<p>1.查看控制台输出，看一下是不是缺少了什么jar包。</p>
+<p>2.如果jar包存在，显示无法输出，就在IDEA的项目发布中，添加lib依赖！</p>
+<p>3.重启Tomcat 即可解决！</p>
+<p><strong>小结</strong></p>
+<p>实现步骤其实非常的简单：</p>
+<pre><code>1.新建一个web项目
+
+2.导入相关jar包
+
+3.编写web.xml , 注册DispatcherServlet
+
+4.编写springmvc配置文件
+
+5.接下来就是去创建对应的控制类 , controller
+
+6.最后完善前端视图和controller之间的对应
+
+7.测试运行调试.</code></pre><p><strong>使用springMVC必须配置的三大件：</strong></p>
+<p><strong>处理器映射器、处理器适配器、视图解析器</strong></p>
+<p><strong>通常，我们只需要手动配置视图解析器，而处理器映射器和处理器适配器只需要开启注解驱动即可，而省去了大段的xml配置</strong></p>
+
             </div>
             <hr/>
 
