@@ -4,13 +4,11 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="SpringMVC知识整合, 我到哪里都是猪">
-    <meta name="description" content="
-本人基于观看狂神的视频做出的总结传送门
-
-1、什么是MVC
-mvc是模型（Model），视图（View），控制器（Controller）的简写，是一种软件设计规范模型（dao,service） 试图（jsp） 控制器（Servlet）
-是">
+    <meta name="keywords" content="前后台数据交互, 我到哪里都是猪">
+    <meta name="description" content="1、前后端分离时代后端需要做的事情有：提供接口，提供数据；
+问题来了：通过什么来传递数据？
+正常的来说后台传数据都是通过对象，但是写前台的人有可能不懂什么是对象。所以我们约定用json来传递数据（json用的最多）
+前端：负责接收渲染后端的">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -18,7 +16,7 @@ mvc是模型（Model），视图（View），控制器（Controller）的简写�
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>SpringMVC知识整合 | 我到哪里都是猪</title>
+    <title>前后台数据交互 | 我到哪里都是猪</title>
     <link rel="icon" type="image/jpeg" href="https://cdn.jsdelivr.net/gh/come-myLife/come-myLife.github.io/medias/logo.jpg">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/come-myLife/come-myLife.github.io/libs/awesome/css/font-awesome.min.css">
@@ -205,13 +203,13 @@ mvc是模型（Model），视图（View），控制器（Controller）的简写�
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/come-myLife/come-myLife.github.io/medias/dwrgIMG/8.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/come-myLife/come-myLife.github.io/medias/dwrgIMG/20.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        SpringMVC知识整合
+                        前后台数据交互
                     </div>
                 </div>
             </div>
@@ -322,8 +320,8 @@ mvc是模型（Model），视图（View），控制器（Controller）的简写�
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E6%A1%86%E6%9E%B6/" target="_blank">
-                                <span class="chip bg-color">框架</span>
+                            <a href="/tags/JSON-Ajax/" target="_blank">
+                                <span class="chip bg-color">JSON+Ajax</span>
                             </a>
                         
                     </div>
@@ -334,8 +332,8 @@ mvc是模型（Model），视图（View），控制器（Controller）的简写�
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/SpringMVC/" class="post-category" target="_blank">
-                                SpringMVC
+                            <a href="/categories/JSON/" class="post-category" target="_blank">
+                                JSON
                             </a>
                         
                     </div>
@@ -346,7 +344,7 @@ mvc是模型（Model），视图（View），控制器（Controller）的简写�
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-04-13
+                    2020-04-18
                 </div>
 
                 
@@ -362,176 +360,114 @@ mvc是模型（Model），视图（View），控制器（Controller）的简写�
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <blockquote>
-<p>本人基于观看狂神的视频做出的总结<a href="https://space.bilibili.com/95256449?spm_id_from=333.788.b_765f7570696e666f.1" target="_blank" rel="noopener">传送门</a></p>
-</blockquote>
-<h2 id="1、什么是MVC"><a href="#1、什么是MVC" class="headerlink" title="1、什么是MVC"></a>1、什么是MVC</h2><ul>
-<li>mvc是模型（Model），视图（View），控制器（Controller）的简写，是一种软件设计规范模型（dao,service） 试图（jsp） 控制器（Servlet）</li>
-<li>是将业务逻辑，数据，显示分离的方法来组织代码。</li>
-<li>mvc主要作用是降低了视图与业务逻辑间的双向耦合。</li>
-<li>mvc不是一种设计模式，mvc是一种架构模式</li>
+                <h2 id="1、前后端分离时代"><a href="#1、前后端分离时代" class="headerlink" title="1、前后端分离时代"></a>1、前后端分离时代</h2><p><strong>后端需要做的事情有：提供接口，提供数据；</strong></p>
+<p><strong>问题来了：通过什么来传递数据？</strong></p>
+<p>正常的来说后台传数据都是通过对象，但是写前台的人有可能不懂什么是对象。<br>所以我们约定用json来传递数据（json用的最多）</p>
+<p><strong>前端：负责接收渲染后端的数据；</strong></p>
+<h2 id="2、那么什么是JSON"><a href="#2、那么什么是JSON" class="headerlink" title="2、那么什么是JSON"></a>2、那么什么是JSON</h2><ul>
+<li>JSON（JavaScript Object Notaion Js对象标记）是一种轻量级的数据交换格式，目前使用特别广泛。</li>
+<li>采用完全独立于编程语言的<strong>文本格式</strong>来存储数据和表示数据。</li>
+<li>简洁和清晰的层次结构使得JSON成为理想的数据交换语言。</li>
+<li>易于阅读和编写，同时也易于机器解析和生成，并有效地提升网络传输效率。</li>
 </ul>
-<p>  &nbsp;&nbsp;&nbsp;&nbsp;<strong>Model（模型）</strong>：数据模型，提供要展示的数据，因此包含数据和行为，可以认为是领域模型<br>或javaBean主键（包含数据行为），不过现在一般都分离开来：Value Object（数据Dao）和服务<br>层（行为Service）。也是模型提供了模型数据查询和模型数据的状态更新等功能，<br>包括数据和业务。</p>
-<p>  &nbsp;&nbsp;&nbsp;&nbsp;<strong>View（视图）</strong>：负责进行模型展示，一般就是我们见到的用户界面，客户想看到的东西。</p>
-<p>  &nbsp;&nbsp;&nbsp;&nbsp;<strong>Controller(控制器)</strong>：接收用户请求，委托给模型来进行处理（状态改变），处理完毕以后把<br>返回的模型数据返回给视图，由视图负责展示，也就是说控制器做了一个调度员的工作。</p>
-<h3 id="1-2、MOdel1时代"><a href="#1-2、MOdel1时代" class="headerlink" title="1.2、MOdel1时代"></a>1.2、MOdel1时代</h3><ul>
-<li>在web早期开发中，通常采用的都是Model1。</li>
-<li>Model1中，主要分2层，视图层(jsp)和模型层(dao,service)。</li>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在JavaScript语言中，一切皆对象（var）。因此，任何<br>JavaScript支持的类型都可以通过JSON来表示，列如字符串、数字、对象、数组等。下面我们来看一下JSOn<br>要求的语法格式：</p>
+<ul>
+<li>对象表示为键值对，数据由逗号分隔(“name”:”wen”)</li>
+<li>花括号保存对象（{}）</li>
+<li>中括号保存数组（[]）</li>
 </ul>
-<p>Model1优点：架构简单，比较适合小型项目开发；<br>Model1缺点：jsp职责不单一，职责过重，不便于维护；</p>
-<h3 id="1-3、MOdel2时代"><a href="#1-3、MOdel2时代" class="headerlink" title="1.3、MOdel2时代"></a>1.3、MOdel2时代</h3><p>Model2把一个项目分成三部分，包括<strong>视图、控制、模型</strong>。</p>
-<p><strong>流程</strong></p>
-<p>1.用户发送请求<br>2.Servlet接收请求数据，并调用对应的业务逻辑方法<br>3.业务处理完毕，返回更新后的数据给servlet<br>4.servlet转向到jsp，由jsp来渲染页面<br>5.响应给前端更新后的页面</p>
-<p><strong>职责分析：</strong><br><strong>Controller：控制器</strong><br>1.获取表单数据<br>2.调用业务逻辑<br>3.转向指定的页面<br><strong>Model：模型</strong><br>1.业务逻辑<br>2.保存数据状态<br><strong>View：视图</strong><br>1.显示页面</p>
-<p>Model2这样不仅提高的代码的复用率与项目的扩展性，且大大降低了项目的维护成本。<br>Model 1模式的实现比较简单，适用于快速开发小规模项目，Model1中JSP页面身兼View<br>和Controller两种角色，将控制逻辑和表现逻辑混杂在一起，从而导致代码的重用性非常低，<br>增加了应用的扩展性和维护的难度。Model2消除了Model1的缺点。</p>
-<h3 id="1-4、第一个MVC程序"><a href="#1-4、第一个MVC程序" class="headerlink" title="1.4、第一个MVC程序"></a>1.4、第一个MVC程序</h3><p><strong>1.需要的配置</strong></p>
-<p>1.新建一个webApp模块</p>
-<p>2.确定导入了SpringMVC相关的依赖！</p>
-<p>3.配置web.xml  ， 注册DispatcherServlet</p>
-<p><strong>2.配置MVCServlet-servlet.xml</strong></p>
-<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
-&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;
-       xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
-       xmlns:context=&quot;http://www.springframework.org/schema/context&quot;
-       xmlns:mvc=&quot;http://www.springframework.org/schema/mvc&quot;
-       xsi:schemaLocation=&quot;http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
-        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
-        http://www.springframework.org/schema/mvc https://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd&quot;&gt;
-    &lt;context:component-scan base-package=&quot;com.controller&quot;&gt;&lt;/context:component-scan&gt;
-    &lt;mvc:default-servlet-handler /&gt;
-
-    &lt;mvc:annotation-driven&gt;
-        &lt;mvc:argument-resolvers&gt;
-            &lt;bean class=&quot;org.springframework.data.web.PageableHandlerMethodArgumentResolver&quot;/&gt;
-        &lt;/mvc:argument-resolvers&gt;
-    &lt;/mvc:annotation-driven&gt;
-    &lt;bean
-            class=&quot;org.springframework.web.servlet.view.InternalResourceViewResolver&quot;&gt;
-        &lt;property name=&quot;viewClass&quot;
-                  value=&quot;org.springframework.web.servlet.view.JstlView&quot;&gt;&lt;/property&gt;
-        &lt;property name=&quot;prefix&quot; value=&quot;/WEB-INF/jsp/&quot;&gt;&lt;/property&gt;
-        &lt;property name=&quot;suffix&quot; value=&quot;.jsp&quot;&gt;&lt;/property&gt;
-    &lt;/bean&gt;
-&lt;/beans&gt;</code></pre><p><strong>3.配置web.xml</strong></p>
-<pre><code>&lt;web-app version=&quot;3.1&quot;
-         xmlns=&quot;http://xmlns.jcp.org/xml/ns/javaee&quot;
-         xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
-         xsi:schemaLocation=&quot;http://xmlns.jcp.org/xml/ns/javaee
-                             http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd&quot;&gt;
-
-  &lt;filter&gt;
-
-    &lt;filter-name&gt;CharacterEncodingFilter&lt;/filter-name&gt;
-
-    &lt;filter-class&gt;org.springframework.web.filter.CharacterEncodingFilter&lt;/filter-class&gt;
-
-    &lt;init-param&gt;
-
-      &lt;param-name&gt;encoding&lt;/param-name&gt;
-
-      &lt;param-value&gt;utf-8&lt;/param-value&gt;
-
-    &lt;/init-param&gt;
-
-  &lt;/filter&gt;
-
-  &lt;filter-mapping&gt;
-
-    &lt;filter-name&gt;CharacterEncodingFilter&lt;/filter-name&gt;
-
-    &lt;url-pattern&gt;/*&lt;/url-pattern&gt;
-
-  &lt;/filter-mapping&gt;
-  &lt;context-param&gt;
-    &lt;param-name&gt;log4jConfigLocation&lt;/param-name&gt;
-    &lt;param-value&gt;classpath:log4j.properties&lt;/param-value&gt;
-  &lt;/context-param&gt;
-  &lt;context-param&gt;&lt;!--每一个webAppRootKey的值都要不一样--&gt;
-    &lt;param-name&gt;webAppRootKey&lt;/param-name&gt;
-    &lt;param-value&gt;mvcpart20.root&lt;/param-value&gt;
-  &lt;/context-param&gt;
-  &lt;filter&gt;
-    &lt;filter-name&gt;HiddenHttpMethodFilter&lt;/filter-name&gt;
-    &lt;filter-class&gt;org.springframework.web.filter.HiddenHttpMethodFilter&lt;/filter-class&gt;
-  &lt;/filter&gt;
-  &lt;filter-mapping&gt;
-    &lt;filter-name&gt;HiddenHttpMethodFilter&lt;/filter-name&gt;
-    &lt;url-pattern&gt;/*&lt;/url-pattern&gt;
-  &lt;/filter-mapping&gt;
-
-
-  &lt;listener&gt;&lt;!--监听器 监听webAppRootKey--&gt;
-    &lt;listener-class&gt;
-      org.springframework.web.util.WebAppRootListener
-    &lt;/listener-class&gt;
-  &lt;/listener&gt;
-  &lt;!--注册DispatcherServlet--&gt;
-  &lt;servlet&gt;
-    &lt;servlet-name&gt;MvcServlet&lt;/servlet-name&gt;
-    &lt;servlet-class&gt;org.springframework.web.servlet.DispatcherServlet&lt;/servlet-class&gt;
-    &lt;load-on-startup&gt;1&lt;/load-on-startup&gt;
-  &lt;/servlet&gt;
-  &lt;servlet-mapping&gt;
-    &lt;servlet-name&gt;MvcServlet&lt;/servlet-name&gt;
-    &lt;url-pattern&gt;/&lt;/url-pattern&gt;
-  &lt;/servlet-mapping&gt;
-
-&lt;/web-app&gt;</code></pre><p><strong>4.编写Controller</strong></p>
-<pre><code>package com.controller;
-
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.servlet.ModelAndView;
-import pojo.User;
-
-@Controller
-public class UserController {
-
-    @PostMapping(&quot;/login&quot;)
-    public ModelAndView login(User user){
-        ModelAndView mv = new ModelAndView(&quot;/loginsc&quot;);
-        mv.addObject(&quot;info&quot;,user);
-        return mv;
-    }
-}
-</code></pre><p>@Controller是为了让Spring IOC容器初始化时自动扫描到；</p>
-<p>@RequestMapping是为了映射请求路径，这里因为类与方法上都有映射所以访问时应该是/HelloController/hello；</p>
-<p>方法中声明Model类型的参数是为了把Action中的数据带到视图中；</p>
-<p>方法返回的结果是视图的名称loginsc，加上配置文件中的前后缀变成WEB-INF/jsp/loginsc.jsp。</p>
-<p><strong>5.需要跳转的页面，数据显示页面</strong></p>
-<pre><code>
-&lt;%@ page contentType=&quot;text/html;charset=UTF-8&quot; language=&quot;java&quot; %&gt;
+<h2 id="3、如何使用JSON"><a href="#3、如何使用JSON" class="headerlink" title="3、如何使用JSON"></a>3、如何使用JSON</h2><ul>
+<li>编写<strong>script</strong> <strong>(这个是标签对，千万不能闭)</strong></li>
+<li>编写一个javaScript对象<pre><code>var user={
+          name:&quot;wenbiao&quot;,
+          age:&quot;18&quot;,
+          sex:&quot;男&quot;
+      };</code></pre></li>
+<li>将js对象转换为json对象<pre><code>var json=JSON.stringify(user);
+console.log(json)</code></pre></li>
+<li>将json对象转换为JavaScript对象<pre><code>var obj=JSON.parse(json);
+console.log(obj);</code></pre></li>
+<li>最后可以通过obj.属性名获取到值，如下：<pre><code>var c=obj.age;
+console.log(c);</code></pre></li>
+</ul>
+<p><strong>测试代码如下：</strong></p>
+<pre><code>&lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;head&gt;
-   &lt;title&gt;Kuangshen&lt;/title&gt;
+    &lt;script type=&quot;text/javascript&quot;&gt;
+        //编写一个javaScript对象
+        var user={
+            name:&quot;wenbiao&quot;,
+            age:&quot;18&quot;,
+            sex:&quot;男&quot;
+        };
+        console.log(user);
+        //将js对象转换为json对象
+        var json=JSON.stringify(user);
+        console.log(json)
+        //将json对象转换为JavaScript对象
+        var obj=JSON.parse(json);
+        console.log(obj);
+        var c=obj.age;
+        console.log(&quot;===========================&quot;)
+        console.log(c);
+    &lt;/script&gt;
 &lt;/head&gt;
 &lt;body&gt;
-${msg}
+&lt;h2&gt;Hello World!&lt;/h2&gt;
 &lt;/body&gt;
-&lt;/html&gt;
-</code></pre><p><strong>6.可能遇到的问题：访问出现404，排查步骤：</strong></p>
-<p>1.查看控制台输出，看一下是不是缺少了什么jar包。</p>
-<p>2.如果jar包存在，显示无法输出，就在IDEA的项目发布中，添加lib依赖！</p>
-<p>3.重启Tomcat 即可解决！</p>
-<p><strong>小结</strong></p>
-<p>实现步骤其实非常的简单：</p>
-<pre><code>1.新建一个web项目
-
-2.导入相关jar包
-
-3.编写web.xml , 注册DispatcherServlet
-
-4.编写springmvc配置文件
-
-5.接下来就是去创建对应的控制类 , controller
-
-6.最后完善前端视图和controller之间的对应
-
-7.测试运行调试.</code></pre><p><strong>使用springMVC必须配置的三大件：</strong></p>
-<p><strong>处理器映射器、处理器适配器、视图解析器</strong></p>
-<p><strong>通常，我们只需要手动配置视图解析器，而处理器映射器和处理器适配器只需要开启注解驱动即可，而省去了大段的xml配置</strong></p>
-
+&lt;/html&gt;</code></pre><h2 id="4、java生成JSON对象返回给前端"><a href="#4、java生成JSON对象返回给前端" class="headerlink" title="4、java生成JSON对象返回给前端"></a>4、java生成JSON对象返回给前端</h2><ul>
+<li>Jackson应该是目前比较好的json解析工具。</li>
+<li>当然工具不止这一个，比如还有阿里巴巴的fastjson等等。</li>
+<li>这里测试的使用Jackson，使用它需要导入它的架包。</li>
+</ul>
+<p><a href="https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind/2.11.0.rc1" target="_blank" rel="noopener">Jackson（架包地址）</a></p>
+<p><strong>什么东西都使用最新的（手动滑稽）</strong></p>
+<p><strong>字符串以json的形式返回测试代码如下：</strong></p>
+<pre><code>//@Controller
+@RestController//只会返回字符串
+public class UserController {
+    @RequestMapping(&quot;/j1&quot;)
+    @ResponseBody//只要加了这个就不会走视图解析器，会直接返回一个字符串
+    public String json1() throws JsonProcessingException {
+        //jackson ,ObjectMapper
+        ObjectMapper mapper = new ObjectMapper();//（import com.fasterxml.jackson.core.JsonProcessingException;）
+        User user = new User(&quot;wen&quot;,18,&quot;男&quot;);
+        String str = mapper.writeValueAsString(user);//把对象变成json格式
+        return str;
+    }
+}</code></pre><p><strong>数组以json的形式返回测试代码如下</strong></p>
+<pre><code>//@Controller
+@RestController//只会返回字符串
+public class UserController {
+    @RequestMapping(&quot;/j2&quot;)
+    public String json2() throws JsonProcessingException {
+        ObjectMapper mapper = new ObjectMapper();
+        List&lt;User&gt; list = new ArrayList&lt;&gt;();
+        User user = new User(&quot;wen&quot;,18,&quot;男&quot;);
+        User user1 = new User(&quot;wen1&quot;,18,&quot;男1&quot;);
+        User user2 = new User(&quot;wen2&quot;,18,&quot;男2&quot;);
+        User user3 = new User(&quot;wen3&quot;,18,&quot;男3&quot;);
+        list.add(user);
+        list.add(user1);
+        list.add(user2);
+        list.add(user3);
+        String s = mapper.writeValueAsString(list);
+        return s;
+    }
+}</code></pre><p><strong>时间类型</strong></p>
+<pre><code>//@Controller
+@RestController//只会返回字符串
+public class UserController {
+    @RequestMapping(&quot;/j3&quot;)
+    public String json3() throws JsonProcessingException {
+        ObjectMapper mapper = new ObjectMapper();
+        Date date = new Date();
+        // objectMapper,时间解析后的默认格式为：Timestamp，时间戳
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat(&quot;yyyy-MM-dd HH:mm:ss&quot;);
+        return mapper.writeValueAsString(simpleDateFormat.format(date));
+    }
+}</code></pre>
             </div>
             <hr/>
 
@@ -569,9 +505,9 @@ ${msg}
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《SpringMVC知识整合》
+                    《前后台数据交互》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/04/13/ssm%E6%A1%86%E6%9E%B6%E4%B9%8BSpringMVC/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/04/18/%E5%85%B3%E4%BA%8E%E5%89%8D%E5%90%8E%E5%8F%B0%E7%9A%84%E6%95%B0%E6%8D%AE%E4%BA%A4%E4%BA%92/" property="cc:attributionName"
                rel="cc:attributionURL">
                 我到哪里都是猪
             </a> 采用
@@ -611,9 +547,10 @@ ${msg}
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2020/04/18/%E5%85%B3%E4%BA%8E%E5%89%8D%E5%90%8E%E5%8F%B0%E7%9A%84%E6%95%B0%E6%8D%AE%E4%BA%A4%E4%BA%92/">
                     <div class="card-image">
@@ -630,9 +567,9 @@ ${msg}
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-04-18
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-04-18
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -645,6 +582,7 @@ ${msg}
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -663,30 +601,30 @@ ${msg}
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/04/11/%E5%85%B3%E4%BA%8Ematery%E4%B8%BB%E9%A2%98%E7%9A%84%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">
+                <a href="/2020/04/13/ssm%E6%A1%86%E6%9E%B6%E4%B9%8BSpringMVC/">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/come-myLife/come-myLife.github.io/medias/dwrgIMG/31.png" class="responsive-img" alt="关于matery主题的搭建">
+                        <img src="https://cdn.jsdelivr.net/gh/come-myLife/come-myLife.github.io/medias/dwrgIMG/8.jpg" class="responsive-img" alt="SpringMVC知识整合">
                         
-                        <span class="card-title">关于matery主题的搭建</span>
+                        <span class="card-title">SpringMVC知识整合</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            这是一个采用Material Design和响应式设计的 Hexo 博客主题。
+                            ssm之SpringMVC
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-04-11
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-04-13
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%8D%9A%E5%AE%A2%E7%9A%84%E6%90%AD%E5%BB%BA/" class="post-category" target="_blank">
-                                    博客的搭建
+                            <a href="/categories/SpringMVC/" class="post-category" target="_blank">
+                                    SpringMVC
                                 </a>
                             
                             
@@ -696,8 +634,8 @@ ${msg}
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%8D%9A%E5%AE%A2/" target="_blank">
-                        <span class="chip bg-color">博客</span>
+                    <a href="/tags/%E6%A1%86%E6%9E%B6/" target="_blank">
+                        <span class="chip bg-color">框架</span>
                     </a>
                     
                 </div>
