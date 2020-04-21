@@ -467,7 +467,219 @@ public class UserController {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat(&quot;yyyy-MM-dd HH:mm:ss&quot;);
         return mapper.writeValueAsString(simpleDateFormat.format(date));
     }
-}</code></pre>
+}</code></pre><p><strong>FastJson</strong></p>
+<blockquote>
+<p>刚刚上面也提到过fastjson所以也简单的提一下</p>
+</blockquote>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; fastjson.jar是阿里开发的一款专门用于java开发的包，<br>可以方便的json对象于javaBean对象的转换，实现javaBean对象与json字符串的转换，实现json对象和json字符串的转换。</p>
+<p>fastjson的pom依赖</p>
+<pre><code>&lt;!-- https://mvnrepository.com/artifact/com.alibaba/fastjson --&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;com.alibaba&lt;/groupId&gt;
+    &lt;artifactId&gt;fastjson&lt;/artifactId&gt;
+    &lt;version&gt;1.2.68&lt;/version&gt;
+&lt;/dependency&gt;</code></pre><p><strong>fastjson三个主要的类</strong></p>
+<ul>
+<li><p>【JSONObject代表json对象】</p>
+</li>
+<li><p>【JSONArray代表json对象数组】</p>
+</li>
+<li><p>【JSON代表JSONObject和JSONArray的转换】</p>
+</li>
+</ul>
+<p><strong>哎，看源码吧，中国式英语很好懂</strong></p>
+<h2 id="5、Ajax"><a href="#5、Ajax" class="headerlink" title="5、Ajax"></a>5、Ajax</h2><p><strong>什么是ajax</strong></p>
+<ul>
+<li>AJAX=Asynchronous JavaScript and XML(异步的JavaScript和XML)。</li>
+<li>AJAX是一种在<strong>无需重新加载整个网页</strong>的情况下，能够<strong>更新部分网页</strong>技术。</li>
+<li><strong>Ajax不是一种新的编程语言，而是一种用于创建更好更快以及语言交互性更强的Web应用程序和技术。</strong></li>
+</ul>
+<p><strong>案例</strong></p>
+<blockquote>
+<p>html页面</p>
+</blockquote>
+<pre><code>&lt;%@ page contentType=&quot;text/html;charset=UTF-8&quot; language=&quot;java&quot; %&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;script src=&quot;${pageContext.request.contextPath}/statics/js/jquery-3.5.0.js&quot;&gt;&lt;/script&gt;
+    &lt;script&gt;
+        $(function () {
+            $(&quot;#btn&quot;).click(function () {
+                $.post(&quot;${pageContext.request.contextPath}/j5&quot;,function (date) {
+                    console.log(date);
+                    var html=&quot;&quot;;
+                    for(let i=0;i&lt;date.length;i++){
+                        html+=&quot;&lt;tr&gt;&quot;+
+                            &quot;&lt;td&gt;&quot;+date[i].name+&quot;&lt;td&gt;&quot;+
+                            &quot;&lt;td&gt;&quot;+date[i].age+&quot;&lt;td&gt;&quot;+
+                            &quot;&lt;td&gt;&quot;+date[i].sex+&quot;&lt;td&gt;&quot;+
+                            &quot;/&lt;tr&gt;&quot;
+                    }
+                    $(&quot;#content&quot;).html(html);
+                });
+            })
+        });
+    &lt;/script&gt;
+    &lt;title&gt;Title&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;input type=&quot;button&quot; value=&quot;加载数据&quot; id=&quot;btn&quot;&gt;
+    &lt;table&gt;
+        &lt;tr&gt;
+            &lt;td&gt;姓名&lt;/td&gt;
+            &lt;td&gt;年龄&lt;/td&gt;
+            &lt;td&gt;性别&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tbody id=&quot;content&quot;&gt;
+            &lt;%--数据：后台--%&gt;
+        &lt;/tbody&gt;
+    &lt;/table&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre><blockquote>
+<p>pojo类</p>
+</blockquote>
+<pre><code>public class User {
+    private String name;
+    private int age;
+    private String sex;
+}</code></pre><blockquote>
+<p>controller类</p>
+</blockquote>
+<pre><code>package com.controller;
+
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
+import pojo.User;
+
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
+//@Controller
+@RestController//下面的方法都会返回字符串
+public class UserController {
+    @RequestMapping(&quot;/j1&quot;)
+    //@ResponseBody//只要加了这个就不会走视图解析器，会直接返回一个字符串
+    @RequestMapping(&quot;/j5&quot;)
+    public List&lt;User&gt; j5(){
+        List&lt;User&gt; list = new ArrayList&lt;&gt;();
+        User user = new User(&quot;wenbiao&quot;,18,&quot;nan&quot;);
+        User user1 = new User(&quot;wenbiao1&quot;,18,&quot;nan&quot;);
+        User user2 = new User(&quot;wenbiao2&quot;,18,&quot;nan&quot;);
+        User user3 = new User(&quot;wenbiao3&quot;,18,&quot;nan&quot;);
+        list.add(user);
+        list.add(user1);
+        list.add(user2);
+        list.add(user3);
+        return list;//（一定要返回字符串）
+    }
+}</code></pre><p>总结：</p>
+<ul>
+<li>前后端分离时代后台需要做的事情是传给前台一个json字符串</li>
+<li>前台接收到后台传递过来的json数据进行处理然后显示</li>
+</ul>
+<h2 id="6、SpringMVC-拦截器"><a href="#6、SpringMVC-拦截器" class="headerlink" title="6、SpringMVC:拦截器"></a>6、SpringMVC:拦截器</h2><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SpringMVC的处理器拦截器类似于Servlet开发中的过滤器Filter，<br>用于对处理器进行预处理和后处理。开发者可以自己定义一些拦截器来实现特定的功能。</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>过滤器于拦截器的区别</strong>：拦截器是AOP思想的具体应用。<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>过滤器</strong><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; * servlet规范中的一部分，任何java web工程都可以使用<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; * 在url-pattern中配置了/ *以后，可以对所有要访问的资源进行拦截<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>拦截器</strong><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; * 拦截器是SpringMVC框架自己的，只有使用了SpringMVC框架工程才能使用<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; * 拦截器只会拦截访问的控制器方法，如果访问的是jsp/html/css/img/js是不会进行拦截的</p>
+<p><strong>例子至上</strong></p>
+<blockquote>
+<p>上面说过拦截器是springMVC框架自己的所有不用导入架包，直接配置MvcServlet-servlet.xml</p>
+</blockquote>
+<blockquote>
+<p>MvcServlet-servlet.xml配置</p>
+</blockquote>
+<pre><code>&lt;mvc:interceptors&gt;&lt;!--带s ，复数形式，说明可以在一个这个东西下面配置多个拦截器--&gt;
+        &lt;bean class=&quot;com.interceptor.MyInterceptor&quot;/&gt;&lt;!--测试拦截器是否可以使用--&gt;
+    &lt;/mvc:interceptors&gt;
+
+
+    &lt;mvc:interceptors&gt;
+        &lt;mvc:interceptor&gt;
+            &lt;mvc:mapping path=&quot;/user/**&quot;/&gt;&lt;!--拦截user下面所有请求@RequestMapping(&quot;/user&quot;)--&gt;
+            &lt;bean class=&quot;com.interceptor.LoginInterceptor&quot;/&gt;
+        &lt;/mvc:interceptor&gt;
+
+
+        &lt;mvc:interceptor&gt;
+            &lt;mvc:mapping path=&quot;配置的路径&quot;/&gt;
+            &lt;bean class=&quot;拦截器的文件地址&quot;/&gt;
+        &lt;/mvc:interceptor&gt;
+    &lt;/mvc:interceptors&gt;</code></pre><blockquote>
+<p>拦截器类（Interceptor）</p>
+</blockquote>
+<pre><code>package com.interceptor;
+
+import org.springframework.web.servlet.HandlerInterceptor;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+public class LoginInterceptor implements HandlerInterceptor {
+    @Override
+    public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
+        //登陆页面也可以放行
+        if(request.getRequestURI().contains(&quot;goLogin&quot;)){
+            return true;
+        }
+        //第一次登陆没有session，也要放行
+        if(request.getRequestURI().contains(&quot;login&quot;)){
+            return true;
+        }
+        //判断什么情况下什么登陆
+        HttpSession session = request.getSession();
+        if(session.getAttribute(&quot;userLoginInfo&quot;)!=null){
+            return true;
+        }
+
+        request.getRequestDispatcher(&quot;/WEB-INF/jsp/login.jsp&quot;).forward(request,response);
+        return false;
+    }
+}</code></pre><blockquote>
+<p>login页面</p>
+</blockquote>
+<pre><code>&lt;%@ page contentType=&quot;text/html;charset=UTF-8&quot; language=&quot;java&quot; %&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Title&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;%--在wen-info下的所有页面或者资源，只能通过controller，或者servlet进行访问--%&gt;
+&lt;h1&gt;登陆页面&lt;/h1&gt;
+
+&lt;form action=&quot;${pageContext.request.contextPath}/user/login&quot; method=&quot;post&quot;&gt;
+    用户名：&lt;input type=&quot;text&quot; name=&quot;username&quot;&gt;
+    密码：&lt;input type=&quot;text&quot; name=&quot;password&quot;&gt;
+    &lt;input type=&quot;submit&quot; value=&quot;提交&quot;&gt;
+&lt;/form&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre><blockquote>
+<p>mian页面</p>
+</blockquote>
+<pre><code>&lt;%@ page contentType=&quot;text/html;charset=UTF-8&quot; language=&quot;java&quot; %&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Title&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;首页&lt;/h1&gt;
+&lt;span&gt;${usernaem}&lt;/span&gt;
+&lt;p&gt;
+    &lt;a href=&quot;${pageContext.request.contextPath}/user/goOut&quot;&gt;注销&lt;/a&gt;
+&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre><p><strong>总结</strong></p>
+<ul>
+<li>拦截器是相对于springMVC框架来说的，所以只能在springMVC里面使用这个是重点！</li>
+<li>拦截器是在程序运行前的时候做出拦截，然后你可以在里面做出你的判断，什么东西需要拦截，什么东西不要拦截</li>
+</ul>
+<hr>
+
             </div>
             <hr/>
 
