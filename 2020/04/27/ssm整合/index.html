@@ -868,27 +868,25 @@ Maven
     http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context-3.0.xsd http://www.springframework.org/schema/mvc https://www.springframework.org/schema/mvc/spring-mvc.xsd<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+     <span class="token comment" spellcheck="true">&lt;!-- 配置SpringMVC --></span>
+     <span class="token comment" spellcheck="true">&lt;!-- 1.开启SpringMVC注解驱动 --></span>
+     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token namespace">mvc:</span>annotation-driven</span> <span class="token punctuation">/></span></span>
+     <span class="token comment" spellcheck="true">&lt;!-- 2.静态资源默认servlet配置--></span>
+     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token namespace">mvc:</span>default-servlet-handler</span><span class="token punctuation">/></span></span>
 
-</code></pre>
+     <span class="token comment" spellcheck="true">&lt;!-- 3.配置jsp 显示ViewResolver视图解析器 --></span>
+     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>bean</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>org.springframework.web.servlet.view.InternalResourceViewResolver<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>viewClass<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>org.springframework.web.servlet.view.JstlView<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>prefix<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>/WEB-INF/jsp/<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>suffix<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>.jsp<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>bean</span><span class="token punctuation">></span></span>
+
+     <span class="token comment" spellcheck="true">&lt;!-- 4.扫描web相关的bean --></span>
+     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token namespace">context:</span>component-scan</span> <span class="token attr-name">base-package</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>com.wen.controller<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+ <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>beans</span><span class="token punctuation">></span></span></code></pre>
 </li>
 </ol>
-<pre><code>    &lt;!-- 配置SpringMVC --&gt;
-    &lt;!-- 1.开启SpringMVC注解驱动 --&gt;
-    &lt;mvc:annotation-driven /&gt;
-    &lt;!-- 2.静态资源默认servlet配置--&gt;
-    &lt;mvc:default-servlet-handler/&gt;
-
-    &lt;!-- 3.配置jsp 显示ViewResolver视图解析器 --&gt;
-    &lt;bean class=&quot;org.springframework.web.servlet.view.InternalResourceViewResolver&quot;&gt;
-        &lt;property name=&quot;viewClass&quot; value=&quot;org.springframework.web.servlet.view.JstlView&quot; /&gt;
-        &lt;property name=&quot;prefix&quot; value=&quot;/WEB-INF/jsp/&quot; /&gt;
-        &lt;property name=&quot;suffix&quot; value=&quot;.jsp&quot; /&gt;
-    &lt;/bean&gt;
-
-    &lt;!-- 4.扫描web相关的bean --&gt;
-    &lt;context:component-scan base-package=&quot;com.wen.controller&quot; /&gt;
-&lt;/beans&gt;
-```</code></pre><h4 id="SpringMVC层"><a href="#SpringMVC层" class="headerlink" title="SpringMVC层"></a>SpringMVC层</h4><ol>
+<h4 id="SpringMVC层"><a href="#SpringMVC层" class="headerlink" title="SpringMVC层"></a>SpringMVC层</h4><ol>
 <li><p>项目添加框架支持Web，修改WEB-INF文件下web.xml文件</p>
 <pre class=" language-xml"><code class="language-xml"><span class="token prolog">&lt;?xml version="1.0" encoding="UTF-8"?></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>web-app</span> <span class="token attr-name">xmlns</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>http://xmlns.jcp.org/xml/ns/javaee<span class="token punctuation">"</span></span>
@@ -941,18 +939,14 @@ Maven
        <span class="token attr-name"><span class="token namespace">xmlns:</span>xsi</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>http://www.w3.org/2001/XMLSchema-instance<span class="token punctuation">"</span></span>
        <span class="token attr-name"><span class="token namespace">xsi:</span>schemaLocation</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>
    http://www.springframework.org/schema/beans
-   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd<span class="token punctuation">"</span></span>
+    <span class="token attr-name">&lt;import</span> <span class="token attr-name">resource</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>classpath:spring-dao.xml<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>import</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>import</span> <span class="token attr-name">resource</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>classpath:spring-service.xml<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>import</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>import</span> <span class="token attr-name">resource</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>classpath:spring-mvc.xml<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>import</span><span class="token punctuation">></span></span>
 
-</code></pre>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>beans</span><span class="token punctuation">></span></span></code></pre>
 </li>
 </ol>
-<pre><code>   &lt;import resource=&quot;classpath:spring-dao.xml&quot;&gt;&lt;/import&gt;
-   &lt;import resource=&quot;classpath:spring-service.xml&quot;&gt;&lt;/import&gt;
-   &lt;import resource=&quot;classpath:spring-mvc.xml&quot;&gt;&lt;/import&gt;</code></pre>   </beans>
-   ```
-
-
-
 <h4 id="Conntroller-和-视图"><a href="#Conntroller-和-视图" class="headerlink" title="Conntroller 和 视图"></a>Conntroller 和 视图</h4><ol>
 <li><p>BookController 类编写 。 方法一：查询全部书籍</p>
 <pre class=" language-java"><code class="language-java"><span class="token keyword">package</span> com<span class="token punctuation">.</span>wen<span class="token punctuation">.</span>controller<span class="token punctuation">;</span>
@@ -1357,7 +1351,7 @@ Maven
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span></code></pre>
-<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p><a href="https://www.bilibili.com/video/av71874024?p=1" target="_blank" rel="noopener">狂神说Java</a><br>后期自己完善了分页和模糊查询功能。</p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p><a href="https://www.bilibili.com/video/av71874024?p=1" target="_blank" rel="noopener">狂神说Java</a><br>后期自己完善了分页和模糊查询功能。<br><a href="https://github.com/come-myLife/ssm" target="_blank" rel="noopener"><strong>源码地址</strong></a></p>
 </li>
 </ol>
 
@@ -1456,7 +1450,13 @@ Maven
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            ssm
+                            SSM框架整合回顾了下Spring,SpringMVC,MyBatis框架整合，完善了一个小案例，包括基本的增删改查功能。
+环境要求
+IDEA
+MySQL 
+Tomcat
+Maven  
+需要熟练掌握MySQL数据库，Spring，Java
                         
                     </div>
                     <div class="publish-info">
