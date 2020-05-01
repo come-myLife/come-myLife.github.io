@@ -4,11 +4,12 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="前后台数据交互, 我到哪里都是猪">
-    <meta name="description" content="1、前后端分离时代后端需要做的事情有：提供接口，提供数据；
-问题来了：通过什么来传递数据？
-正常的来说后台传数据都是通过对象，但是写前台的人有可能不懂什么是对象。所以我们约定用json来传递数据（json用的最多）
-前端：负责接收渲染后端的">
+    <meta name="keywords" content="vue(入门), 我到哪里都是猪">
+    <meta name="description" content="vue第一个程序
+首先得有那个node.js环境（在cmd里面输入node -v 出现版本信息就代表有安装环境）
+
+1.首先创建一个存放vue文件的文件夹2.通过cmd打开（管理员权限）3.执行vue init webpack myvue
+">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -16,7 +17,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>前后台数据交互 | 我到哪里都是猪</title>
+    <title>vue(入门) | 我到哪里都是猪</title>
     <link rel="icon" type="image/jpeg" href="https://cdn.jsdelivr.net/gh/come-myLife/come-myLife.github.io/medias/logo.jpg">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/come-myLife/come-myLife.github.io/libs/awesome/css/font-awesome.min.css">
@@ -203,13 +204,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/come-myLife/come-myLife.github.io/medias/dwrgIMG/20.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/come-myLife/come-myLife.github.io/medias/dwrgIMG/27.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        前后台数据交互
+                        vue(入门)
                     </div>
                 </div>
             </div>
@@ -320,8 +321,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/JSON-Ajax/" target="_blank">
-                                <span class="chip bg-color">JSON+Ajax</span>
+                            <a href="/tags/vue%E7%AC%AC%E4%B8%80%E4%B8%AA%E7%A8%8B%E5%BA%8F/" target="_blank">
+                                <span class="chip bg-color">vue第一个程序</span>
                             </a>
                         
                     </div>
@@ -332,8 +333,8 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/JSON/" class="post-category" target="_blank">
-                                JSON
+                            <a href="/categories/ssm/" class="post-category" target="_blank">
+                                ssm
                             </a>
                         
                     </div>
@@ -344,7 +345,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-04-18
+                    2020-05-01
                 </div>
 
                 
@@ -360,325 +361,12 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="1、前后端分离时代"><a href="#1、前后端分离时代" class="headerlink" title="1、前后端分离时代"></a>1、前后端分离时代</h2><p><strong>后端需要做的事情有：提供接口，提供数据；</strong></p>
-<p><strong>问题来了：通过什么来传递数据？</strong></p>
-<p>正常的来说后台传数据都是通过对象，但是写前台的人有可能不懂什么是对象。<br>所以我们约定用json来传递数据（json用的最多）</p>
-<p><strong>前端：负责接收渲染后端的数据；</strong></p>
-<h2 id="2、那么什么是JSON"><a href="#2、那么什么是JSON" class="headerlink" title="2、那么什么是JSON"></a>2、那么什么是JSON</h2><ul>
-<li>JSON（JavaScript Object Notaion Js对象标记）是一种轻量级的数据交换格式，目前使用特别广泛。</li>
-<li>采用完全独立于编程语言的<strong>文本格式</strong>来存储数据和表示数据。</li>
-<li>简洁和清晰的层次结构使得JSON成为理想的数据交换语言。</li>
-<li>易于阅读和编写，同时也易于机器解析和生成，并有效地提升网络传输效率。</li>
-</ul>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在JavaScript语言中，一切皆对象（var）。因此，任何<br>JavaScript支持的类型都可以通过JSON来表示，列如字符串、数字、对象、数组等。下面我们来看一下JSOn<br>要求的语法格式：</p>
-<ul>
-<li>对象表示为键值对，数据由逗号分隔(“name”:”wen”)</li>
-<li>花括号保存对象（{}）</li>
-<li>中括号保存数组（[]）</li>
-</ul>
-<h2 id="3、如何使用JSON"><a href="#3、如何使用JSON" class="headerlink" title="3、如何使用JSON"></a>3、如何使用JSON</h2><ul>
-<li>编写<strong>script</strong> <strong>(这个是标签对，千万不能闭)</strong></li>
-<li>编写一个javaScript对象<pre><code>var user={
-          name:&quot;wenbiao&quot;,
-          age:&quot;18&quot;,
-          sex:&quot;男&quot;
-      };</code></pre></li>
-<li>将js对象转换为json对象<pre><code>var json=JSON.stringify(user);
-console.log(json)</code></pre></li>
-<li>将json对象转换为JavaScript对象<pre><code>var obj=JSON.parse(json);
-console.log(obj);</code></pre></li>
-<li>最后可以通过obj.属性名获取到值，如下：<pre><code>var c=obj.age;
-console.log(c);</code></pre></li>
-</ul>
-<p><strong>测试代码如下：</strong></p>
-<pre><code>&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;head&gt;
-    &lt;script type=&quot;text/javascript&quot;&gt;
-        //编写一个javaScript对象
-        var user={
-            name:&quot;wenbiao&quot;,
-            age:&quot;18&quot;,
-            sex:&quot;男&quot;
-        };
-        console.log(user);
-        //将js对象转换为json对象
-        var json=JSON.stringify(user);
-        console.log(json)
-        //将json对象转换为JavaScript对象
-        var obj=JSON.parse(json);
-        console.log(obj);
-        var c=obj.age;
-        console.log(&quot;===========================&quot;)
-        console.log(c);
-    &lt;/script&gt;
-&lt;/head&gt;
-&lt;body&gt;
-&lt;h2&gt;Hello World!&lt;/h2&gt;
-&lt;/body&gt;
-&lt;/html&gt;</code></pre><h2 id="4、java生成JSON对象返回给前端"><a href="#4、java生成JSON对象返回给前端" class="headerlink" title="4、java生成JSON对象返回给前端"></a>4、java生成JSON对象返回给前端</h2><ul>
-<li>Jackson应该是目前比较好的json解析工具。</li>
-<li>当然工具不止这一个，比如还有阿里巴巴的fastjson等等。</li>
-<li>这里测试的使用Jackson，使用它需要导入它的架包。</li>
-</ul>
-<p><a href="https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind/2.11.0.rc1" target="_blank" rel="noopener">Jackson（架包地址）</a></p>
-<p><strong>什么东西都使用最新的（手动滑稽）</strong></p>
-<p><strong>字符串以json的形式返回测试代码如下：</strong></p>
-<pre><code>//@Controller
-@RestController//只会返回字符串
-public class UserController {
-    @RequestMapping(&quot;/j1&quot;)
-    @ResponseBody//只要加了这个就不会走视图解析器，会直接返回一个字符串
-    public String json1() throws JsonProcessingException {
-        //jackson ,ObjectMapper
-        ObjectMapper mapper = new ObjectMapper();//（import com.fasterxml.jackson.core.JsonProcessingException;）
-        User user = new User(&quot;wen&quot;,18,&quot;男&quot;);
-        String str = mapper.writeValueAsString(user);//把对象变成json格式
-        return str;
-    }
-}</code></pre><p><strong>数组以json的形式返回测试代码如下</strong></p>
-<pre><code>//@Controller
-@RestController//只会返回字符串
-public class UserController {
-    @RequestMapping(&quot;/j2&quot;)
-    public String json2() throws JsonProcessingException {
-        ObjectMapper mapper = new ObjectMapper();
-        List&lt;User&gt; list = new ArrayList&lt;&gt;();
-        User user = new User(&quot;wen&quot;,18,&quot;男&quot;);
-        User user1 = new User(&quot;wen1&quot;,18,&quot;男1&quot;);
-        User user2 = new User(&quot;wen2&quot;,18,&quot;男2&quot;);
-        User user3 = new User(&quot;wen3&quot;,18,&quot;男3&quot;);
-        list.add(user);
-        list.add(user1);
-        list.add(user2);
-        list.add(user3);
-        String s = mapper.writeValueAsString(list);
-        return s;
-    }
-}</code></pre><p><strong>时间类型</strong></p>
-<pre><code>//@Controller
-@RestController//只会返回字符串
-public class UserController {
-    @RequestMapping(&quot;/j3&quot;)
-    public String json3() throws JsonProcessingException {
-        ObjectMapper mapper = new ObjectMapper();
-        Date date = new Date();
-        // objectMapper,时间解析后的默认格式为：Timestamp，时间戳
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat(&quot;yyyy-MM-dd HH:mm:ss&quot;);
-        return mapper.writeValueAsString(simpleDateFormat.format(date));
-    }
-}</code></pre><p><strong>FastJson</strong></p>
-<blockquote>
-<p>刚刚上面也提到过fastjson所以也简单的提一下</p>
+                <h1 id="vue第一个程序"><a href="#vue第一个程序" class="headerlink" title="vue第一个程序"></a>vue第一个程序</h1><blockquote>
+<p>首先得有那个node.js环境（在cmd里面输入node -v 出现版本信息就代表有安装环境）</p>
 </blockquote>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; fastjson.jar是阿里开发的一款专门用于java开发的包，<br>可以方便的json对象于javaBean对象的转换，实现javaBean对象与json字符串的转换，实现json对象和json字符串的转换。</p>
-<p>fastjson的pom依赖</p>
-<pre><code>&lt;!-- https://mvnrepository.com/artifact/com.alibaba/fastjson --&gt;
-&lt;dependency&gt;
-    &lt;groupId&gt;com.alibaba&lt;/groupId&gt;
-    &lt;artifactId&gt;fastjson&lt;/artifactId&gt;
-    &lt;version&gt;1.2.68&lt;/version&gt;
-&lt;/dependency&gt;</code></pre><p><strong>fastjson三个主要的类</strong></p>
-<ul>
-<li><p>【JSONObject代表json对象】</p>
-</li>
-<li><p>【JSONArray代表json对象数组】</p>
-</li>
-<li><p>【JSON代表JSONObject和JSONArray的转换】</p>
-</li>
-</ul>
-<p><strong>哎，看源码吧，中国式英语很好懂</strong></p>
-<h2 id="5、Ajax"><a href="#5、Ajax" class="headerlink" title="5、Ajax"></a>5、Ajax</h2><p><strong>什么是ajax</strong></p>
-<ul>
-<li>AJAX=Asynchronous JavaScript and XML(异步的JavaScript和XML)。</li>
-<li>AJAX是一种在<strong>无需重新加载整个网页</strong>的情况下，能够<strong>更新部分网页</strong>技术。</li>
-<li><strong>Ajax不是一种新的编程语言，而是一种用于创建更好更快以及语言交互性更强的Web应用程序和技术。</strong></li>
-</ul>
-<p><strong>案例</strong></p>
-<blockquote>
-<p>html页面</p>
-</blockquote>
-<pre><code>&lt;%@ page contentType=&quot;text/html;charset=UTF-8&quot; language=&quot;java&quot; %&gt;
-&lt;html&gt;
-&lt;head&gt;
-    &lt;script src=&quot;${pageContext.request.contextPath}/statics/js/jquery-3.5.0.js&quot;&gt;&lt;/script&gt;
-    &lt;script&gt;
-        $(function () {
-            $(&quot;#btn&quot;).click(function () {
-                $.post(&quot;${pageContext.request.contextPath}/j5&quot;,function (date) {
-                    console.log(date);
-                    var html=&quot;&quot;;
-                    for(let i=0;i&lt;date.length;i++){
-                        html+=&quot;&lt;tr&gt;&quot;+
-                            &quot;&lt;td&gt;&quot;+date[i].name+&quot;&lt;td&gt;&quot;+
-                            &quot;&lt;td&gt;&quot;+date[i].age+&quot;&lt;td&gt;&quot;+
-                            &quot;&lt;td&gt;&quot;+date[i].sex+&quot;&lt;td&gt;&quot;+
-                            &quot;/&lt;tr&gt;&quot;
-                    }
-                    $(&quot;#content&quot;).html(html);
-                });
-            })
-        });
-    &lt;/script&gt;
-    &lt;title&gt;Title&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;input type=&quot;button&quot; value=&quot;加载数据&quot; id=&quot;btn&quot;&gt;
-    &lt;table&gt;
-        &lt;tr&gt;
-            &lt;td&gt;姓名&lt;/td&gt;
-            &lt;td&gt;年龄&lt;/td&gt;
-            &lt;td&gt;性别&lt;/td&gt;
-        &lt;/tr&gt;
-        &lt;tbody id=&quot;content&quot;&gt;
-            &lt;%--数据：后台--%&gt;
-        &lt;/tbody&gt;
-    &lt;/table&gt;
-&lt;/body&gt;
-&lt;/html&gt;</code></pre><blockquote>
-<p>pojo类</p>
-</blockquote>
-<pre><code>public class User {
-    private String name;
-    private int age;
-    private String sex;
-}</code></pre><blockquote>
-<p>controller类</p>
-</blockquote>
-<pre><code>package com.controller;
-
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
-import pojo.User;
-
-import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-
-//@Controller
-@RestController//下面的方法都会返回字符串
-public class UserController {
-    @RequestMapping(&quot;/j1&quot;)
-    //@ResponseBody//只要加了这个就不会走视图解析器，会直接返回一个字符串
-    @RequestMapping(&quot;/j5&quot;)
-    public List&lt;User&gt; j5(){
-        List&lt;User&gt; list = new ArrayList&lt;&gt;();
-        User user = new User(&quot;wenbiao&quot;,18,&quot;nan&quot;);
-        User user1 = new User(&quot;wenbiao1&quot;,18,&quot;nan&quot;);
-        User user2 = new User(&quot;wenbiao2&quot;,18,&quot;nan&quot;);
-        User user3 = new User(&quot;wenbiao3&quot;,18,&quot;nan&quot;);
-        list.add(user);
-        list.add(user1);
-        list.add(user2);
-        list.add(user3);
-        return list;//（一定要返回字符串）
-    }
-}</code></pre><p>总结：</p>
-<ul>
-<li>前后端分离时代后台需要做的事情是传给前台一个json字符串</li>
-<li>前台接收到后台传递过来的json数据进行处理然后显示</li>
-</ul>
-<h2 id="6、SpringMVC-拦截器"><a href="#6、SpringMVC-拦截器" class="headerlink" title="6、SpringMVC:拦截器"></a>6、SpringMVC:拦截器</h2><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SpringMVC的处理器拦截器类似于Servlet开发中的过滤器Filter，<br>用于对处理器进行预处理和后处理。开发者可以自己定义一些拦截器来实现特定的功能。</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>过滤器于拦截器的区别</strong>：拦截器是AOP思想的具体应用。<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>过滤器</strong><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; * servlet规范中的一部分，任何java web工程都可以使用<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; * 在url-pattern中配置了/ *以后，可以对所有要访问的资源进行拦截<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>拦截器</strong><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; * 拦截器是SpringMVC框架自己的，只有使用了SpringMVC框架工程才能使用<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; * 拦截器只会拦截访问的控制器方法，如果访问的是jsp/html/css/img/js是不会进行拦截的</p>
-<p><strong>例子至上</strong></p>
-<blockquote>
-<p>上面说过拦截器是springMVC框架自己的所有不用导入架包，直接配置MvcServlet-servlet.xml</p>
-</blockquote>
-<blockquote>
-<p>MvcServlet-servlet.xml配置</p>
-</blockquote>
-<pre><code>&lt;mvc:interceptors&gt;&lt;!--带s ，复数形式，说明可以在一个这个东西下面配置多个拦截器--&gt;
-        &lt;bean class=&quot;com.interceptor.MyInterceptor&quot;/&gt;&lt;!--测试拦截器是否可以使用--&gt;
-    &lt;/mvc:interceptors&gt;
-
-
-    &lt;mvc:interceptors&gt;
-        &lt;mvc:interceptor&gt;
-            &lt;mvc:mapping path=&quot;/user/**&quot;/&gt;&lt;!--拦截user下面所有请求@RequestMapping(&quot;/user&quot;)--&gt;
-            &lt;bean class=&quot;com.interceptor.LoginInterceptor&quot;/&gt;
-        &lt;/mvc:interceptor&gt;
-
-
-        &lt;mvc:interceptor&gt;
-            &lt;mvc:mapping path=&quot;配置的路径&quot;/&gt;
-            &lt;bean class=&quot;拦截器的文件地址&quot;/&gt;
-        &lt;/mvc:interceptor&gt;
-    &lt;/mvc:interceptors&gt;</code></pre><blockquote>
-<p>拦截器类（Interceptor）</p>
-</blockquote>
-<pre><code>package com.interceptor;
-
-import org.springframework.web.servlet.HandlerInterceptor;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-
-public class LoginInterceptor implements HandlerInterceptor {
-    @Override
-    public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-        //登陆页面也可以放行
-        if(request.getRequestURI().contains(&quot;goLogin&quot;)){
-            return true;
-        }
-        //第一次登陆没有session，也要放行
-        if(request.getRequestURI().contains(&quot;login&quot;)){
-            return true;
-        }
-        //判断什么情况下什么登陆
-        HttpSession session = request.getSession();
-        if(session.getAttribute(&quot;userLoginInfo&quot;)!=null){
-            return true;
-        }
-
-        request.getRequestDispatcher(&quot;/WEB-INF/jsp/login.jsp&quot;).forward(request,response);
-        return false;
-    }
-}</code></pre><blockquote>
-<p>login页面</p>
-</blockquote>
-<pre><code>&lt;%@ page contentType=&quot;text/html;charset=UTF-8&quot; language=&quot;java&quot; %&gt;
-&lt;html&gt;
-&lt;head&gt;
-    &lt;title&gt;Title&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-&lt;%--在wen-info下的所有页面或者资源，只能通过controller，或者servlet进行访问--%&gt;
-&lt;h1&gt;登陆页面&lt;/h1&gt;
-
-&lt;form action=&quot;${pageContext.request.contextPath}/user/login&quot; method=&quot;post&quot;&gt;
-    用户名：&lt;input type=&quot;text&quot; name=&quot;username&quot;&gt;
-    密码：&lt;input type=&quot;text&quot; name=&quot;password&quot;&gt;
-    &lt;input type=&quot;submit&quot; value=&quot;提交&quot;&gt;
-&lt;/form&gt;
-&lt;/body&gt;
-&lt;/html&gt;</code></pre><blockquote>
-<p>mian页面</p>
-</blockquote>
-<pre><code>&lt;%@ page contentType=&quot;text/html;charset=UTF-8&quot; language=&quot;java&quot; %&gt;
-&lt;html&gt;
-&lt;head&gt;
-    &lt;title&gt;Title&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;h1&gt;首页&lt;/h1&gt;
-&lt;span&gt;${usernaem}&lt;/span&gt;
-&lt;p&gt;
-    &lt;a href=&quot;${pageContext.request.contextPath}/user/goOut&quot;&gt;注销&lt;/a&gt;
-&lt;/p&gt;
-&lt;/body&gt;
-&lt;/html&gt;</code></pre><p><strong>总结</strong></p>
-<ul>
-<li>拦截器是相对于springMVC框架来说的，所以只能在springMVC里面使用这个是重点！</li>
-<li>拦截器是在程序运行前的时候做出拦截，然后你可以在里面做出你的判断，什么东西需要拦截，什么东西不要拦截</li>
-</ul>
-<hr>
+<p>1.首先创建一个存放vue文件的文件夹<br>2.通过cmd打开（管理员权限）<br>3.执行vue init webpack myvue</p>
+<p>4.然后就会创建一个名字为myvue的文件</p>
+<p>创建的时候会有一些选择（按照提示和自己的需求来）<br>5.cd myvue(进入vue文件夹)<br>6.再执行npm install(类似于java创建maven工程（自动导包的操作）)<br>7.npm run dev(相对于java启动tomcat)  然后ctrl+c可以停止运行</p>
 
             </div>
             <hr/>
@@ -717,9 +405,9 @@ public class LoginInterceptor implements HandlerInterceptor {
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《前后台数据交互》
+                    《vue(入门)》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/04/18/%E5%85%B3%E4%BA%8E%E5%89%8D%E5%90%8E%E5%8F%B0%E7%9A%84%E6%95%B0%E6%8D%AE%E4%BA%A4%E4%BA%92/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/05/01/vue%E7%AC%AC%E4%B8%80%E4%B8%AA%E7%A8%8B%E5%BA%8F/" property="cc:attributionName"
                rel="cc:attributionURL">
                 我到哪里都是猪
             </a> 采用
@@ -759,9 +447,63 @@ public class LoginInterceptor implements HandlerInterceptor {
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2020/05/01/vue%E7%AC%AC%E4%B8%80%E4%B8%AA%E7%A8%8B%E5%BA%8F/">
+                    <div class="card-image">
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/come-myLife/come-myLife.github.io/medias/dwrgIMG/27.jpg" class="responsive-img" alt="vue(入门)">
+                        
+                        <span class="card-title">vue(入门)</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            vue第一个程序
+首先得有那个node.js环境（在cmd里面输入node -v 出现版本信息就代表有安装环境）
+
+1.首先创建一个存放vue文件的文件夹2.通过cmd打开（管理员权限）3.执行vue init webpack myvue
+
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-05-01
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/ssm/" class="post-category" target="_blank">
+                                    ssm
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/vue%E7%AC%AC%E4%B8%80%E4%B8%AA%E7%A8%8B%E5%BA%8F/" target="_blank">
+                        <span class="chip bg-color">vue第一个程序</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
             <div class="card">
                 <a href="/2020/04/27/ssm%E6%95%B4%E5%90%88/">
                     <div class="card-image">
@@ -784,63 +526,15 @@ Maven
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-04-27
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-04-27
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
                             <a href="/categories/ssm/" class="post-category" target="_blank">
                                     ssm
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E6%A1%86%E6%9E%B6/" target="_blank">
-                        <span class="chip bg-color">框架</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2020/04/13/ssm%E6%A1%86%E6%9E%B6%E4%B9%8BSpringMVC/">
-                    <div class="card-image">
-                        
-                        <img src="https://cdn.jsdelivr.net/gh/come-myLife/come-myLife.github.io/medias/dwrgIMG/8.jpg" class="responsive-img" alt="SpringMVC知识整合">
-                        
-                        <span class="card-title">SpringMVC知识整合</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            SpringMVC
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-04-13
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fa fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/SpringMVC/" class="post-category" target="_blank">
-                                    SpringMVC
                                 </a>
                             
                             
