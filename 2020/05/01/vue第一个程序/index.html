@@ -6,10 +6,14 @@
     <meta charset="utf-8">
     <meta name="keywords" content="vue(入门), 我到哪里都是猪">
     <meta name="description" content="vue第一个程序
-首先得有那个node.js环境（在cmd里面输入node -v 出现版本信息就代表有安装环境）
+首先得有那个node.js环境（在cmd里面输入node -v 出现版本信息就代表有安装环境）如果有条件的化安装还可以安装一个git
 
-1.首先创建一个存放vue文件的文件夹2.通过cmd打开（管理员权限）3.执行vue init webpack myvue
-">
+vue的一些基础语法
+v-if
+v-else-if
+v-else
+v-for
+v-on">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -362,8 +366,26 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h1 id="vue第一个程序"><a href="#vue第一个程序" class="headerlink" title="vue第一个程序"></a>vue第一个程序</h1><blockquote>
-<p>首先得有那个node.js环境（在cmd里面输入node -v 出现版本信息就代表有安装环境）</p>
+<p>首先得有那个node.js环境（在cmd里面输入node -v 出现版本信息就代表有安装环境）如果有条件的化安装还可以安装一个git</p>
 </blockquote>
+<h4 id="vue的一些基础语法"><a href="#vue的一些基础语法" class="headerlink" title="vue的一些基础语法"></a>vue的一些基础语法</h4><ul>
+<li>v-if</li>
+<li>v-else-if</li>
+<li>v-else</li>
+<li>v-for</li>
+<li>v-on绑定事件，简写@</li>
+<li>v-model 数据双向绑定</li>
+<li>v-bind给组件绑定参数，简写：</li>
+</ul>
+<h5 id="vue常用的7个属性"><a href="#vue常用的7个属性" class="headerlink" title="vue常用的7个属性"></a>vue常用的7个属性</h5><ul>
+<li>el属性<br>  用来指示vue编译器从上面地方开始解析，可以说是一个占位符</li>
+<li>data属性<br>  用来组织从view中抽象出来的属性，可以说将视图的数据抽象出来存放在打他中</li>
+<li>template属性<br>  用来设置模板，会替换页面元素，包括占位符</li>
+<li>methods属性<br>  放置页面中的业务逻辑，js方法一般都放在methods中</li>
+<li>render属性<br>  创建真正的Virtual Dom</li>
+<li>computed属性<br>  用来计算</li>
+<li>watch属性<br>  watch：function(new,old){}<br>  监听data中数据的变化<br>  两个参数，一个返回新值，一个返回旧值</li>
+</ul>
 <p>1.首先创建一个存放vue文件的文件夹<br>2.通过cmd打开（管理员权限）<br>3.执行vue init webpack myvue</p>
 <p>4.然后就会创建一个名字为myvue的文件</p>
 <p>创建的时候会有一些选择（按照提示和自己的需求来）<br>5.cd myvue(进入vue文件夹)<br>6.再执行npm install(类似于java创建maven工程（自动导包的操作）)<br>7.npm run dev(相对于java启动tomcat)  然后ctrl+c可以停止运行</p>
@@ -447,51 +469,49 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
-            </div>
+                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/05/01/vue%E7%AC%AC%E4%B8%80%E4%B8%AA%E7%A8%8B%E5%BA%8F/">
+                <a href="/2020/05/03/mybatisPlus/">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/come-myLife/come-myLife.github.io/medias/dwrgIMG/27.jpg" class="responsive-img" alt="vue(入门)">
+                        <img src="https://cdn.jsdelivr.net/gh/come-myLife/come-myLife.github.io/medias/dwrgIMG/6.jpg" class="responsive-img" alt="mybatis-plus">
                         
-                        <span class="card-title">vue(入门)</span>
+                        <span class="card-title">mybatis-plus</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            vue第一个程序
-首先得有那个node.js环境（在cmd里面输入node -v 出现版本信息就代表有安装环境）
+                            mybatis-plus
+首先我这个文档是基于mybatis-plus官方文档写的，大家要是在配置，或者我的代码和官方文档出现了冲突请以官方文档为参考官网传送门mybatis-puls在基于狂神说java来完成的
 
-1.首先创建一个存放vue文件的文件夹2.通过cmd打开（管理员权限）3.执行vue init webpack myvue
-
+特性
+无侵入：只做增强不
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-05-01
-                            </span>
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-05-03
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/vue/" class="post-category" target="_blank">
-                                    vue
+                            <a href="/categories/mybatis-plus/" class="post-category" target="_blank">
+                                    mybatis-plus
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/vue%E7%AC%AC%E4%B8%80%E4%B8%AA%E7%A8%8B%E5%BA%8F/" target="_blank">
-                        <span class="chip bg-color">vue第一个程序</span>
+                    <a href="/tags/mybatis-plus/" target="_blank">
+                        <span class="chip bg-color">mybatis-plus</span>
                     </a>
                     
                 </div>
