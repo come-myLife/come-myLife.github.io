@@ -4,8 +4,15 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Hello World, 我到哪里都是猪">
-    <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problemswhen using Hexo">
+    <meta name="keywords" content="动态代理和AOP, 我到哪里都是猪">
+    <meta name="description" content="代理模式代理模式的分类：
+静态代理
+动态代理
+
+代理模式的优点
+可以使真实角色的操作更加纯粹！不用去关注一些公共的业务
+公共业务就交给了代理角色！实现了业务分工（房东只需要专注于出租房子，不要需要去做一些签合同，带客户看房的操作）
+公共业务">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -13,7 +20,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Hello World | 我到哪里都是猪</title>
+    <title>动态代理和AOP | 我到哪里都是猪</title>
     <link rel="icon" type="image/jpeg" href="https://cdn.jsdelivr.net/gh/come-myLife/come-myLife.github.io/medias/logo.jpg">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/come-myLife/come-myLife.github.io/libs/awesome/css/font-awesome.min.css">
@@ -200,13 +207,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/come-myLife/come-myLife.github.io/medias/dwrgIMG/10.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/come-myLife/come-myLife.github.io/medias/dwrgIMG/18.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Hello World
+                        动态代理和AOP
                     </div>
                 </div>
             </div>
@@ -317,8 +324,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E5%8D%9A%E5%AE%A2/" target="_blank">
-                                <span class="chip bg-color">博客</span>
+                            <a href="/tags/%E6%A1%86%E6%9E%B6/" target="_blank">
+                                <span class="chip bg-color">框架</span>
                             </a>
                         
                     </div>
@@ -329,8 +336,8 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Hello-World/" class="post-category" target="_blank">
-                                Hello World
+                            <a href="/categories/AOP/" class="post-category" target="_blank">
+                                AOP
                             </a>
                         
                     </div>
@@ -341,7 +348,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-04-03
+                    2020-05-21
                 </div>
 
                 
@@ -357,8 +364,105 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p><strong><em>Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems</em></strong><br><strong><em>when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.Quick Start</em></strong></p>
-<h1 id="Test第一次搭建博客"><a href="#Test第一次搭建博客" class="headerlink" title="Test第一次搭建博客"></a>Test第一次搭建博客</h1><p><code>$ hexo new &quot;My New Post&quot;</code></p>
+                <h4 id="代理模式"><a href="#代理模式" class="headerlink" title="代理模式"></a>代理模式</h4><h4 id="代理模式的分类："><a href="#代理模式的分类：" class="headerlink" title="代理模式的分类："></a>代理模式的分类：</h4><ul>
+<li>静态代理</li>
+<li>动态代理</li>
+</ul>
+<h4 id="代理模式的优点"><a href="#代理模式的优点" class="headerlink" title="代理模式的优点"></a>代理模式的优点</h4><ul>
+<li>可以使真实角色的操作更加纯粹！不用去关注一些公共的业务</li>
+<li>公共业务就交给了代理角色！实现了业务分工（房东只需要专注于出租房子，不要需要去做一些签合同，带客户看房的操作）</li>
+<li>公共业务发生扩展的时候，方便集中管理（添加附属操作只需要对代理角色操作即可）</li>
+</ul>
+<h4 id="代理模式的缺点："><a href="#代理模式的缺点：" class="headerlink" title="代理模式的缺点："></a>代理模式的缺点：</h4><p>一个真实角色就会产生一个代理角色：代码量会翻倍-开发效率会变低</p>
+<h4 id="动态代理"><a href="#动态代理" class="headerlink" title="动态代理"></a>动态代理</h4><ul>
+<li>动态代理和静态代理角色一样</li>
+<li>动态代理的代理类是动态生成的，不是我们直接创建的</li>
+<li>动态代理分为2大类：基于接口的动态代理，基于类的动态代理</li>
+<li>基于接口—jdk动态代理</li>
+<li>基于类—-cglib</li>
+</ul>
+<p><strong>需要了解1个类和一个接口</strong></p>
+<ul>
+<li>Class Proxy</li>
+<li>Interface InvocationHandler</li>
+<li>proxy：代理  </li>
+<li>Proxy提供了创建动态代理类和实例的静态方法，它也是由这些方法创建的所有动态代理类的超类。 </li>
+<li>invocationhandler：调用处理程序</li>
+<li>InvocationHandler是由代理实例的调用处理程序实现的接口 。 </li>
+<li>每个代理实例都有一个关联的调用处理程序。 当在代理实例上调用方法时，方法调用将被编码并分派到其调用处理程序的invoke方法</li>
+</ul>
+<p>案例</p>
+<p><strong>Client</strong></p>
+<pre class=" language-html"><code class="language-html">package com.wen.demo04;
+
+public class Client {
+    public static void main(String[] args) {
+        UserServiceImpl userService = new UserServiceImpl();
+        ProxyInvocationHandler pih = new ProxyInvocationHandler();
+        pih.setObject(userService);
+        //通过proxy方法帮助我们实现的会经过很多步骤去帮我们生成proxy（可以使用debug看一下）
+        UserServiceImpl proxy = (UserServiceImpl) pih.proxy();
+        proxy.delete();
+    }
+}</code></pre>
+<p><strong>ProxyInvocationHandler</strong></p>
+<pre class=" language-html"><code class="language-html">package com.wen.demo04;
+
+import java.lang.reflect.InvocationHandler;
+import java.lang.reflect.Method;
+import java.lang.reflect.Proxy;
+
+public class ProxyInvocationHandler implements InvocationHandler {
+
+    private Object object;
+
+    public void setObject(Object object) {
+        this.object = object;
+    }
+
+    public Object proxy(){
+      return Proxy.newProxyInstance(this.getClass().getClassLoader(), object.getClass().getInterfaces(), this);
+    }
+
+    @Override
+    public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+        Object invoke = method.invoke(object, args);
+        return invoke;
+    }
+}</code></pre>
+<p><strong>UserService</strong></p>
+<pre class=" language-html"><code class="language-html">package com.wen.demo04;
+
+public interface UserService {
+    public void add();
+    public void update();
+    public void query();
+    public void delete();
+}</code></pre>
+<p><strong>UserServiceImpl</strong></p>
+<pre class=" language-html"><code class="language-html">package com.wen.demo04;
+
+public class UserServiceImpl implements UserService {
+    @Override
+    public void add() {
+        System.out.println("执行了添加add方法");
+    }
+
+    @Override
+    public void update() {
+        System.out.println("执行了添加update方法");
+    }
+
+    @Override
+    public void query() {
+        System.out.println("执行了添加query方法");
+    }
+
+    @Override
+    public void delete() {
+        System.out.println("执行了添加delete方法");
+    }
+}</code></pre>
 
             </div>
             <hr/>
@@ -397,9 +501,9 @@
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《Hello World》
+                    《动态代理和AOP》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/04/03/hello-world/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/05/21/%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86%E5%92%8Caop/" property="cc:attributionName"
                rel="cc:attributionURL">
                 我到哪里都是猪
             </a> 采用
@@ -439,82 +543,35 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2020/04/11/%E5%85%B3%E4%BA%8Ematery%E4%B8%BB%E9%A2%98%E7%9A%84%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">
+                <a href="/2020/05/21/%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86%E5%92%8Caop/">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/come-myLife/come-myLife.github.io/medias/dwrgIMG/31.png" class="responsive-img" alt="关于matery主题的搭建">
+                        <img src="https://cdn.jsdelivr.net/gh/come-myLife/come-myLife.github.io/medias/dwrgIMG/18.jpg" class="responsive-img" alt="动态代理和AOP">
                         
-                        <span class="card-title">关于matery主题的搭建</span>
+                        <span class="card-title">动态代理和AOP</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            这是一个采用Material Design和响应式设计的 Hexo 博客主题。
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-04-11
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fa fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E5%8D%9A%E5%AE%A2%E7%9A%84%E6%90%AD%E5%BB%BA/" class="post-category" target="_blank">
-                                    博客的搭建
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E5%8D%9A%E5%AE%A2/" target="_blank">
-                        <span class="chip bg-color">博客</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="fa fa-dot-circle-o"></i>
-            </div>
-            <div class="card">
-                <a href="/2020/04/03/hello-world/">
-                    <div class="card-image">
-                        
-                        <img src="https://cdn.jsdelivr.net/gh/come-myLife/come-myLife.github.io/medias/dwrgIMG/10.jpg" class="responsive-img" alt="Hello World">
-                        
-                        <span class="card-title">Hello World</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            测试
+                            Spring
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-04-03
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-05-21
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Hello-World/" class="post-category" target="_blank">
-                                    Hello World
+                            <a href="/categories/AOP/" class="post-category" target="_blank">
+                                    AOP
                                 </a>
                             
                             
@@ -525,8 +582,60 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%8D%9A%E5%AE%A2/" target="_blank">
-                        <span class="chip bg-color">博客</span>
+                    <a href="/tags/%E6%A1%86%E6%9E%B6/" target="_blank">
+                        <span class="chip bg-color">框架</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/05/03/mybatisPlus/">
+                    <div class="card-image">
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/come-myLife/come-myLife.github.io/medias/dwrgIMG/6.jpg" class="responsive-img" alt="mybatis-plus">
+                        
+                        <span class="card-title">mybatis-plus</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            mybatis-plus
+首先我这个文档是基于mybatis-plus官方文档写的，大家要是在配置，或者我的代码和官方文档出现了冲突请以官方文档为参考官网传送门mybatis-puls在基于狂神说java来完成的
+
+特性
+无侵入：只做增强不
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-05-03
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/mybatis-plus/" class="post-category" target="_blank">
+                                    mybatis-plus
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/mybatis-plus/" target="_blank">
+                        <span class="chip bg-color">mybatis-plus</span>
                     </a>
                     
                 </div>
