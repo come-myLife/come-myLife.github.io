@@ -26,6 +26,13 @@
     <style type="text/css">
         
     </style>
+	
+	
+	<script type="text/javascript">
+	
+		document.write('<script type="text/javascript" src="/js/sakura.js"><\/script>');
+
+	</script>
 
     <script src="https://cdn.jsdelivr.net/gh/come-myLife/come-myLife.github.io/libs/jquery/jquery-2.2.0.min.js"></script>
     
@@ -476,7 +483,7 @@ $('.bg-cover').css('background-image', 'url(https://cdn.jsdelivr.net/gh/come-myL
                 type: 'pie',
                 radius: '50%',
                 color: ['#6772e5', '#ff9e0f', '#fa755a', '#3ecf8e', '#82d3f4', '#ab47bc', '#525f7f', '#f51c47', '#26A69A'],
-                data: [{"name":"mybatis-plus","value":1},{"name":"JSON","value":1},{"name":"vue","value":1},{"name":"SpringMVC","value":1},{"name":"ssm","value":1},{"name":"博客的搭建","value":1},{"name":"AOP","value":1}],
+                data: [{"name":"mybatis-plus","value":1},{"name":"SpringMVC","value":1},{"name":"博客的搭建","value":1},{"name":"vue","value":1},{"name":"ssm","value":1},{"name":"JSON","value":1},{"name":"AOP","value":1}],
                 itemStyle: {
                     emphasis: {
                         shadowBlur: 10,
@@ -500,7 +507,7 @@ $('.bg-cover').css('background-image', 'url(https://cdn.jsdelivr.net/gh/come-myL
         xAxis: [
             {
                 type: 'category',
-                data: ["框架","mybatis-plus","JSON+Ajax","vue","博客"]
+                data: ["框架","mybatis-plus","博客","vue","JSON+Ajax"]
             }
         ],
         yAxis: [
@@ -636,8 +643,14 @@ $('.bg-cover').css('background-image', 'url(https://cdn.jsdelivr.net/gh/come-myL
             
             
             
-            <a href="/tags/JSON-Ajax/" target="_blank">
-                <span class="chip center-align waves-effect waves-light chip-default">JSON+Ajax</span>
+            <a href="/tags/%E6%A1%86%E6%9E%B6/" target="_blank">
+                <span class="chip center-align waves-effect waves-light chip-default">框架</span>
+            </a>
+            
+            
+            
+            <a href="/tags/%E5%8D%9A%E5%AE%A2/" target="_blank">
+                <span class="chip center-align waves-effect waves-light chip-default">博客</span>
             </a>
             
             
@@ -648,14 +661,8 @@ $('.bg-cover').css('background-image', 'url(https://cdn.jsdelivr.net/gh/come-myL
             
             
             
-            <a href="/tags/%E6%A1%86%E6%9E%B6/" target="_blank">
-                <span class="chip center-align waves-effect waves-light chip-default">框架</span>
-            </a>
-            
-            
-            
-            <a href="/tags/%E5%8D%9A%E5%AE%A2/" target="_blank">
-                <span class="chip center-align waves-effect waves-light chip-default">博客</span>
+            <a href="/tags/JSON-Ajax/" target="_blank">
+                <span class="chip center-align waves-effect waves-light chip-default">JSON+Ajax</span>
             </a>
             
             
@@ -680,6 +687,7 @@ $('.bg-cover').css('background-image', 'url(https://cdn.jsdelivr.net/gh/come-myL
             <a href="https://hexo.io/" target="_blank">Hexo</a>&nbsp;的
             <a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>&nbsp;主题搭建
             <br>
+			
             
             
             
@@ -802,13 +810,7 @@ $(function () {
     
     <script async src="https://cdn.jsdelivr.net/gh/come-myLife/come-myLife.github.io/libs/others/busuanzi.pure.mini.js"></script>
     
-	<script type="text/javascript">
-	//只在桌面版网页启用特效
-	var windowWidth = $(window).width();
-	if (windowWidth > 768) {
-		document.write('<script type="text/javascript" src="/js/sakura.js"><\/script>');
-	}
-	</script>	
+		
 	
 
     <!-- 在线聊天工具  洪卫 shw2018 modify 2019.09.17 -->
