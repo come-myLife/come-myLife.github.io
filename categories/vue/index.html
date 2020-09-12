@@ -254,10 +254,10 @@ $('.bg-cover').css('background-image', 'url(https://cdn.jsdelivr.net/gh/come-myL
                 
                 
                 
-                <a href="/categories/vue/" title="vue: 1">
+                <a href="/categories/mybatis-plus/" title="mybatis-plus: 1">
                     <span class="chip center-align waves-effect waves-light
-                             chip-active "
-                            style="background-color: #F9EBEA;">vue
+                             chip-default "
+                            style="background-color: #F9EBEA;">mybatis-plus
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -272,19 +272,10 @@ $('.bg-cover').css('background-image', 'url(https://cdn.jsdelivr.net/gh/come-myL
                 </a>
                 
                 
-                <a href="/categories/mybatis-plus/" title="mybatis-plus: 1">
+                <a href="/categories/SpringMVC/" title="SpringMVC: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #D5F5E3;">mybatis-plus
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/categories/JSON/" title="JSON: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            style="background-color: #E8F8F5;">JSON
+                            style="background-color: #D5F5E3;">SpringMVC
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -293,7 +284,25 @@ $('.bg-cover').css('background-image', 'url(https://cdn.jsdelivr.net/gh/come-myL
                 <a href="/categories/%E5%8D%9A%E5%AE%A2%E7%9A%84%E6%90%AD%E5%BB%BA/" title="博客的搭建: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #FEF9E7;">博客的搭建
+                            style="background-color: #E8F8F5;">博客的搭建
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/categories/vue/" title="vue: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-active "
+                            style="background-color: #FEF9E7;">vue
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/categories/JSON/" title="JSON: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            style="background-color: #F8F9F9;">JSON
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -302,16 +311,7 @@ $('.bg-cover').css('background-image', 'url(https://cdn.jsdelivr.net/gh/come-myL
                 <a href="/categories/AOP/" title="AOP: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #F8F9F9;">AOP
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/categories/SpringMVC/" title="SpringMVC: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            style="background-color: #82E0AA;">SpringMVC
+                            style="background-color: #82E0AA;">AOP
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -513,8 +513,13 @@ $(function () {
     
     <script async src="https://cdn.jsdelivr.net/gh/come-myLife/come-myLife.github.io/libs/others/busuanzi.pure.mini.js"></script>
     
-	
-	
+	<script type="text/javascript">
+	//只在桌面版网页启用特效
+	var windowWidth = $(window).width();
+	if (windowWidth > 768) {
+		document.write('<script type="text/javascript" src="/js/sakura.js"><\/script>');
+	}
+	</script>	
 	
 
     <!-- 在线聊天工具  洪卫 shw2018 modify 2019.09.17 -->
